@@ -14,8 +14,8 @@
         "enabled": false,
         "rules": []
       },
-      "samplingMethod": "RANDOM_FIXED_RATIO",
-      "maxRecords": -1,
+      "samplingMethod": "RANDOM_FIXED_NB",
+      "maxRecords": 10000,
       "targetRatio": 0.01,
       "ascending": true,
       "withinFirstN": -1,
