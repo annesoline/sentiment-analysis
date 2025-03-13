@@ -65,8 +65,9 @@
     },
     "codeEnvs": {
       "python": {
-        "mode": "INHERIT",
-        "preventOverride": false
+        "mode": "EXPLICIT_ENV",
+        "preventOverride": false,
+        "envName": "edf_sentiment_analysis"
       },
       "r": {
         "mode": "INHERIT",
