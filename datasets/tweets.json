@@ -69,9 +69,28 @@
   },
   "tags": [],
   "params": {
-    "uploadBoxId": "70088ff1eaed2fbed83791896228f26566a1122c9d13b038777d74a20ba7cc36",
-    "uploadConnection": "s3-snowflake-fast-path-only",
     "uploadFSProviderType": "S3",
+    "uploadedConfig": {
+      "bucket": "se-sandbox-eu",
+      "metastoreSynchronizationEnabled": true,
+      "metastoreDatabaseName": "dataiku",
+      "metastoreTableName": "${NODE}_${projectKey}_tweets",
+      "connection": "s3-snowflake-fast-path-only",
+      "path": "/7bZNEZM9Ji07Fs0zsZa57SXI/uploads/${NODE}_${projectKey}/tweets",
+      "notReadyIfEmpty": false,
+      "filesSelectionRules": {
+        "mode": "ALL",
+        "excludeRules": [],
+        "includeRules": [],
+        "explicitFiles": []
+      },
+      "variablesExpansionLoopConfig": {
+        "enabled": false,
+        "mode": "CREATE_VARIABLE_FOR_EACH_COLUMN",
+        "replacements": []
+      }
+    },
+    "connection": "s3-snowflake-fast-path-only",
     "notReadyIfEmpty": false,
     "filesSelectionRules": {
       "mode": "ALL",
