@@ -16,7 +16,7 @@
       },
       "samplingMethod": "RANDOM_FIXED_RATIO",
       "maxRecords": -1,
-      "targetRatio": 0.02,
+      "targetRatio": 0.01,
       "ascending": true,
       "withinFirstN": -1,
       "maxReadUncompressedBytes": -1
