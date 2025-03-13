@@ -1,12 +1,12 @@
 {
   "name": "data",
-  "type": "S3",
+  "type": "GCS",
   "params": {
     "bucket": "se-sandbox-eu",
     "metastoreSynchronizationEnabled": true,
     "metastoreDatabaseName": "dataiku",
     "metastoreTableName": "${NODE}_${projectKey}_${odbId}",
-    "connection": "s3-snowflake-fast-path-only",
+    "connection": "GCS_BigQuery_BQ-nico",
     "path": "/7bZNEZM9Ji07Fs0zsZa57SXI/${NODE}_${projectKey}/${odbId}",
     "notReadyIfEmpty": false,
     "filesSelectionRules": {
