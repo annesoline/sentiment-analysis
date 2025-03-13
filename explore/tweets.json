@@ -115,7 +115,7 @@
           "enabled": false,
           "rules": []
         },
-        "samplingMethod": "HEAD_SEQUENTIAL",
+        "samplingMethod": "RANDOM_FIXED_NB_EXACT",
         "maxRecords": 10000,
         "targetRatio": 0.02,
         "ascending": true,
@@ -123,7 +123,7 @@
         "maxReadUncompressedBytes": -1
       },
       "autoRefreshSample": false,
-      "_refreshTrigger": 0
+      "_refreshTrigger": 1741862101355
     },
     "vizSampling": {
       "selection": {
