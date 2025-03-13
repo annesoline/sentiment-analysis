@@ -14,7 +14,7 @@
         "enabled": false,
         "rules": []
       },
-      "samplingMethod": "FULL",
+      "samplingMethod": "RANDOM_FIXED_RATIO",
       "maxRecords": -1,
       "targetRatio": 0.02,
       "ascending": true,
@@ -29,7 +29,11 @@
         "readParams": {
           "mode": "AUTO",
           "autoModeRepartitionInto": 10,
-          "map": {}
+          "map": {
+            "tweets": {
+              "repartition": 10
+            }
+          }
         },
         "sparkConfig": {
           "inheritConf": "spark-XS-2-workers-of-1-CPU-3Gb-Ram",

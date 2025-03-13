@@ -1,4 +1,18 @@
 {
+  "uiData": {
+    "mode": "\u0026\u0026",
+    "$latestOperator": "\u0026\u0026",
+    "$filterOptions": "rules",
+    "conditions": [
+      {
+        "input": "target",
+        "col": "id",
+        "$showList": false,
+        "operator": "contains"
+      }
+    ]
+  },
+  "$status": {},
   "distinct": false,
   "enabled": false
 }
