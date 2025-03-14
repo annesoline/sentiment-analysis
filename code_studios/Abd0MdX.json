@@ -1,0 +1,19 @@
+{
+  "name": "Test",
+  "libName": "Test",
+  "templateId": "Streamlit",
+  "params": {},
+  "owner": "anne-soline.guilbert-ly@dataiku.com",
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "anne-soline.guilbert-ly@dataiku.com"
+    },
+    "lastModifiedOn": 1741957297381
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}
