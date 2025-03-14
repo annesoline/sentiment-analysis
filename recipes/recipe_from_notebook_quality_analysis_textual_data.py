@@ -264,31 +264,3 @@ with tempfile.TemporaryDirectory() as tmpdirname:
 # Write recipe outputs
 imported_tweets = dataiku.Dataset("imported_tweets")
 imported_tweets.write_with_schema(imported_tweets_df)
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
-# # 3. Textual data visual exploration
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-# Word Cloud Visualization
-import matplotlib.pyplot as plt
-from wordcloud import WordCloud
-from collections import Counter
-import re
-
-# Combine all tweets into one text
-all_text = ' '.join(df['text'].astype(str))
-
-# Clean text - remove URLs, mentions, special chars
-all_text = re.sub(r'http\S+|@\S+|[^\w\s]', '', all_text.lower())
-
-# Create word cloud
-wordcloud = WordCloud(width=1200, height=600, 
-                     background_color='white',
-                     max_words=100).generate(all_text)
-
-# Display the word cloud
-plt.figure(figsize=(12, 6))
-plt.imshow(wordcloud, interpolation='bilinear')
-plt.axis('off')
-plt.title('Most Frequent Words in Tweets')
-plt.show()
