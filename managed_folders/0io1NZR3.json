@@ -1,13 +1,13 @@
 {
   "name": "data",
-  "type": "GCS",
+  "type": "S3",
   "params": {
-    "bucket": "se-sandbox-eu",
+    "bucket": "gis-dataiker-2-data-1",
     "metastoreSynchronizationEnabled": true,
-    "metastoreDatabaseName": "dataiku",
-    "metastoreTableName": "${NODE}_${projectKey}_${odbId}",
-    "connection": "GCS_BigQuery_BQ-nico",
-    "path": "/7bZNEZM9Ji07Fs0zsZa57SXI/${NODE}_${projectKey}/${odbId}",
+    "metastoreDatabaseName": "default",
+    "metastoreTableName": "${projectKey}_${odbId}",
+    "connection": "dataiku-managed-storage",
+    "path": "/managed-dss-data/${projectKey}/${odbId}",
     "notReadyIfEmpty": false,
     "filesSelectionRules": {
       "mode": "ALL",
