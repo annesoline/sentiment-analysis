@@ -67,12 +67,12 @@
   },
   "schema": {
     "columns": [
-      {"name":"0","type":"bigint"},
-      {"name":"1467810369","type":"bigint"},
-      {"name":"Mon Apr 06 22:19:45 PDT 2009","type":"string"},
-      {"name":"NO_QUERY","type":"string"},
-      {"name":"_TheSpecialOne_","type":"string"},
-      {"name":"@switchfoot http://twitpic.com/2y1zl - Awww, that\u0027s a bummer.  You shoulda got David Carr of Third Day to do it. ;D","type":"string"}
+      {"name":"target","type":"bigint"},
+      {"name":"id","type":"bigint"},
+      {"name":"date","type":"string"},
+      {"name":"flag","type":"string"},
+      {"name":"user","type":"string"},
+      {"name":"text","type":"string"}
     ],
     "userModified": false
   },
