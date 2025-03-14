@@ -1,5 +1,5 @@
 {
-  "name": "snow_folder",
+  "name": "s3_folder",
   "type": "S3",
   "params": {
     "bucket": "gis-dataiker-2-data-1",
