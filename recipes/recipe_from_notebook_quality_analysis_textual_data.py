@@ -7,7 +7,9 @@ pd.set_option('display.max_colwidth', None)
 # # 1. Load tweets dataset
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-df = pd.read_csv('training.1600000.processed.noemoticon.csv', encoding='latin-1', names=['target', 'id', 'date', 'flag', 'user', 'text'])
+# Read recipe inputs
+imported_tweets = dataiku.Dataset("imported_tweets")
+df = imported_tweets.get_dataframe()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 df.head()
