@@ -42,7 +42,9 @@ with tempfile.TemporaryDirectory() as tmpdirname:
     for file in os.listdir(tmpdirname):
         local_file = os.path.join(tmpdirname, file)
         folder.upload_file(file, local_file)
-        imported_tweets_df = pd.read_csv(local_file, encoding="latin-1")
+        imported_tweets_df = pd.read_csv(local_file, encoding="latin-1", 
+                               names=['target', 'id', 'date', 'flag', 'user', 'text'])
+
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Write recipe outputs
