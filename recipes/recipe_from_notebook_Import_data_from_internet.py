@@ -46,5 +46,5 @@ with tempfile.TemporaryDirectory() as tmpdirname:
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Write recipe outputs
-annotated_tweets = dataiku.Dataset("annotated_tweets")
-annotated_tweets.write_with_schema(annotated_tweets_df)
+imported_tweets_df = dataiku.Dataset("imported_tweets")
+imported_tweets.write_with_schema(imported_tweets_df)
