@@ -2,7 +2,7 @@
   "type": "S3",
   "managed": true,
   "featureGroup": false,
-  "formatType": "parquet",
+  "formatType": "csv",
   "checklists": {
     "checklists": []
   },
@@ -25,12 +25,35 @@
     }
   },
   "formatParams": {
-    "parquetLowerCaseIdentifiers": false,
-    "representsNullFields": false,
-    "parquetCompressionMethod": "SNAPPY",
-    "parquetFlavor": "HIVE",
-    "parquetBlockSizeMB": 128,
-    "readTemporalMode": "AS_TEMPORAL"
+    "style": "unix",
+    "charset": "utf8",
+    "separator": "\t",
+    "quoteChar": "\"",
+    "escapeChar": "\\",
+    "maxRowChars": 100000000,
+    "dateSerializationFormat": "ISO",
+    "arrayMapFormat": "json",
+    "hiveSeparators": [
+      "\u0002",
+      "\u0003",
+      "\u0004",
+      "\u0005",
+      "\u0006",
+      "\u0007",
+      "\b"
+    ],
+    "skipRowsBeforeHeader": 0,
+    "parseHeaderRow": false,
+    "skipRowsAfterHeader": 0,
+    "probableNumberOfRecords": 0,
+    "normalizeBooleans": false,
+    "normalizeDoubles": true,
+    "readAdditionalColumnsBehavior": "INSERT_IN_DATA_WARNING",
+    "readMissingColumnsBehavior": "DISCARD_SILENT",
+    "readDataTypeMismatchBehavior": "DISCARD_WARNING",
+    "writeDataTypeMismatchBehavior": "DISCARD_WARNING",
+    "fileReadFailureBehavior": "FAIL",
+    "compress": "gz"
   },
   "partitioning": {
     "ignoreNonMatchingFile": false,
@@ -46,12 +69,12 @@
   },
   "tags": [],
   "params": {
-    "bucket": "se-sandbox-eu",
+    "bucket": "gis-dataiker-2-data-1",
     "metastoreSynchronizationEnabled": true,
-    "metastoreDatabaseName": "dataiku",
-    "metastoreTableName": "${NODE}_${projectKey}_tweets_classified",
-    "connection": "s3-snowflake-fast-path-only",
-    "path": "/7bZNEZM9Ji07Fs0zsZa57SXI/${NODE}_${projectKey}/tweets_classified",
+    "metastoreDatabaseName": "default",
+    "metastoreTableName": "${projectKey}_tweets_classified",
+    "connection": "dataiku-managed-storage",
+    "path": "/managed-dss-data/${projectKey}/tweets_classified",
     "notReadyIfEmpty": false,
     "filesSelectionRules": {
       "mode": "ALL",
