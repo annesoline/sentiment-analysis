@@ -36,7 +36,7 @@
           "appendMode": false
         },
         {
-          "ref": "df_unreadable",
+          "ref": "unreadable_tweets",
           "appendMode": false
         },
         {

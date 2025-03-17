@@ -229,7 +229,8 @@ plt.show()
 df_repetitive = dataiku.Dataset("repetitive_tweets")
 df_repetitive.write_with_schema(df_repetitive)
 
-df_unreadable = dataiku.Dataset("df_unreadable")
+# Dataset df_unreadable renamed to unreadable_tweets by anne-soline.guilbert-ly@dataiku.com on 2025-03-17 10:33:52
+df_unreadable = dataiku.Dataset("unreadable_tweets")
 df_unreadable.write_with_schema(df_unreadable)
 
 df_high_percentage_numbers = dataiku.Dataset("df_high_percentage_numbers")
