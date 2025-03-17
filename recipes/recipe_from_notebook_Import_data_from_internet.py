@@ -33,17 +33,20 @@ if folder_id is None:
 folder = dataiku.Folder(folder_id)
 dataset_slug = "kazanova/sentiment140"
 with tempfile.TemporaryDirectory() as tmpdirname:
-    
+    # Download the dataset
     api.dataset_download_files(dataset_slug, path=tmpdirname, unzip=True)
 
     for file in os.listdir(tmpdirname):
         local_file = os.path.join(tmpdirname, file)
+        # Upload it to the folder "data" in the Flow
         folder.upload_file(file, local_file)
+        
+        # Transform the csv to a dataframe and define the schema
         imported_tweets_df = pd.read_csv(local_file, encoding="latin-1", 
                                names=['target', 'id', 'date', 'flag', 'user', 'text'])
 
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-# Write recipe outputs
+# Create the Dataiku dataset "imported_tweets" in the Flow 
 imported_tweets = dataiku.Dataset("imported_tweets")
 imported_tweets.write_with_schema(imported_tweets_df)
