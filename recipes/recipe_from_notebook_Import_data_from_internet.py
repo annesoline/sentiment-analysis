@@ -1,4 +1,5 @@
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+import chardet
 import dataiku
 import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
@@ -29,7 +30,6 @@ if folder_id is None:
     print("Folder 'data' not found!")
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-import chardet
 folder = dataiku.Folder(folder_id)
 dataset_slug = "kazanova/sentiment140"
 with tempfile.TemporaryDirectory() as tmpdirname:
