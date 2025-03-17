@@ -223,7 +223,6 @@ plt.show()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Recipe outputs
-
 enhanced_tweets_informations  = dataiku.Dataset("enhanced_tweets_informations")
 enhanced_tweets_informations.write_with_schema(df)
 
