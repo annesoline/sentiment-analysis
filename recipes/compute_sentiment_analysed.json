@@ -2,7 +2,13 @@
   "type": "CustomCode_sentiment-analysis-score",
   "neverRecomputeExistingPartitions": false,
   "params": {
-    "customConfig": {},
+    "customConfig": {
+      "sentiment_scale": "1to5",
+      "output_score": true,
+      "output_sentiment": true,
+      "output_confidence": true,
+      "text_column_name": "text"
+    },
     "containerSelection": {
       "containerMode": "INHERIT"
     }
