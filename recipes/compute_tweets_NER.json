@@ -2,7 +2,16 @@
   "type": "CustomCode_named-entity-recognition-extract",
   "neverRecomputeExistingPartitions": false,
   "params": {
-    "customConfig": {},
+    "customConfig": {
+      "text_language_spacy": "en",
+      "text_language_flair": "en",
+      "advanced_settings": false,
+      "ner_model": "spacy",
+      "output_single_json": false,
+      "output_json_format": "standard",
+      "flair_device": "cpu",
+      "text_column_name": "text"
+    },
     "containerSelection": {
       "containerMode": "INHERIT"
     }
