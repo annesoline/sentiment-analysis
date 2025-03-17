@@ -30,4 +30,5 @@ dependencies = [
     "tornado>=6.3,<6.5",
     "traitlets==5.9.0",
     "urllib3<2",
+    "wordcloud>=1.9.4",
 ]
