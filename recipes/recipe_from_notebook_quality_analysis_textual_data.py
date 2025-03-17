@@ -224,7 +224,7 @@ plt.show()
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Recipe outputs
 
-df_unreadable = dataiku.Dataset("unreadable_tweets")
+df_unreadable = dataiku.Dataset("enhanced_tweets_informations")
 df_unreadable.write_with_schema(df_unreadable)
 
 
