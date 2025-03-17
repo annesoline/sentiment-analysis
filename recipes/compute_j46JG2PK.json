@@ -2,7 +2,20 @@
   "type": "CustomCode_nlp-visualization-wordcloud",
   "neverRecomputeExistingPartitions": false,
   "params": {
-    "customConfig": {},
+    "customConfig": {
+      "language": "en",
+      "remove_stopwords": true,
+      "remove_punctuation": true,
+      "case_insensitive": true,
+      "max_words": 100,
+      "color_palette": "default",
+      "color_list": [
+        "#1F77B4",
+        "#FF7F0E",
+        "#2CA02C"
+      ],
+      "text_column": "text"
+    },
     "containerSelection": {
       "containerMode": "INHERIT"
     }
