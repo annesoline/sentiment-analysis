@@ -229,17 +229,17 @@ enhanced_tweets_informations.write_with_schema(df_unreadable)
 
 
 # Dataset df_repetitive renamed to repetitive_tweets by anne-soline.guilbert-ly@dataiku.com on 2025-03-17 10:33:36
-df_repetitive = dataiku.Dataset("repetitive_tweets")
+repetitive_tweets = dataiku.Dataset("repetitive_tweets")
 df_repetitive.write_with_schema(df_repetitive)
 
 # Dataset df_unreadable renamed to unreadable_tweets by anne-soline.guilbert-ly@dataiku.com on 2025-03-17 10:33:52
-df_unreadable = dataiku.Dataset("unreadable_tweets")
+unreadable_tweets = dataiku.Dataset("unreadable_tweets")
 df_unreadable.write_with_schema(df_unreadable)
 
 # Dataset df_high_percentage_numbers renamed to high_percentage_numbers_tweets by anne-soline.guilbert-ly@dataiku.com on 2025-03-17 10:33:58
-df_high_percentage_numbers = dataiku.Dataset("high_percentage_numbers_tweets")
+high_percentage_numbers_tweets = dataiku.Dataset("high_percentage_numbers_tweets")
 df_high_percentage_numbers.write_with_schema(df_high_percentage_numbers)
 
 # Dataset df_very_short_tweets renamed to very_short_tweets by anne-soline.guilbert-ly@dataiku.com on 2025-03-17 10:34:03
-df_very_short_tweets = dataiku.Dataset("very_short_tweets")
+very_short_tweets = dataiku.Dataset("very_short_tweets")
 df_very_short_tweets.write_with_schema(df_very_short_tweets)
