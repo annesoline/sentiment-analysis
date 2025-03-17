@@ -237,5 +237,6 @@ df_unreadable.write_with_schema(df_unreadable)
 df_high_percentage_numbers = dataiku.Dataset("high_percentage_numbers_tweets")
 df_high_percentage_numbers.write_with_schema(df_high_percentage_numbers)
 
-df_very_short_tweets = dataiku.Dataset("df_very_short_tweets")
+# Dataset df_very_short_tweets renamed to very_short_tweets by anne-soline.guilbert-ly@dataiku.com on 2025-03-17 10:34:03
+df_very_short_tweets = dataiku.Dataset("very_short_tweets")
 df_very_short_tweets.write_with_schema(df_very_short_tweets)

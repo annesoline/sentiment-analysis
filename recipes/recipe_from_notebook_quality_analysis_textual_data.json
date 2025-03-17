@@ -44,7 +44,7 @@
           "appendMode": false
         },
         {
-          "ref": "df_very_short_tweets",
+          "ref": "very_short_tweets",
           "appendMode": false
         }
       ]
