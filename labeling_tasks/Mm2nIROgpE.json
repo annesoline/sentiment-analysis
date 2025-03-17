@@ -36,6 +36,14 @@
     {
       "key": "positive",
       "value": "Classify every tweets which give a positive sentiment (joy, gratefulness,  serenity, interest, hope, proud, entertainment, inspiration, awe, love)"
+    },
+    {
+      "key": "very negative",
+      "value": "Classify every tweets which give an extremely negative sentiment  (fear, deception, anxiety, culpability, frustration,  jealousy, sadness, angryness, disguss"
+    },
+    {
+      "key": "very positive",
+      "value": "Classify every tweets which give an extremely positive sentiment (joy, gratefulness,  serenity, interest, hope, proud, entertainment, inspiration, awe, love)"
     }
   ],
   "instructions": "",
