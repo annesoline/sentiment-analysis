@@ -66,8 +66,17 @@
     }
   },
   "schema": {
-    "columns": [],
-    "userModified": true
+    "columns": [
+      {"name":"target","type":"bigint"},
+      {"name":"id","type":"bigint"},
+      {"name":"date","type":"string"},
+      {"name":"flag","type":"string"},
+      {"name":"user","type":"string"},
+      {"name":"text","type":"string"},
+      {"name":"tweet_length_chars","type":"bigint"},
+      {"name":"tweet_length_words","type":"bigint"}
+    ],
+    "userModified": false
   },
   "typeSystemVersion": "V2",
   "dkuProperties": [],
