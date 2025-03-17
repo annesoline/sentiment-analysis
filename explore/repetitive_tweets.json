@@ -3,10 +3,53 @@
     "steps": [],
     "maxProcessedMemTableBytes": -1,
     "columnsSelection": {
-      "mode": "ALL"
+      "mode": "ALL",
+      "list": [
+        {
+          "name": "target",
+          "d": true
+        },
+        {
+          "name": "id",
+          "d": true
+        },
+        {
+          "name": "date",
+          "d": true
+        },
+        {
+          "name": "flag",
+          "d": true
+        },
+        {
+          "name": "user",
+          "d": true
+        },
+        {
+          "name": "text",
+          "d": true
+        },
+        {
+          "name": "tweet_length_chars",
+          "d": true
+        },
+        {
+          "name": "tweet_length_words",
+          "d": true
+        }
+      ]
     },
     "columnOrder": [],
-    "columnWidthsByName": {},
+    "columnWidthsByName": {
+      "target": 100,
+      "id": 100,
+      "date": 211,
+      "flag": 100,
+      "user": 120,
+      "text": 601,
+      "tweet_length_chars": 150,
+      "tweet_length_words": 150
+    },
     "columnUseScientificNotationByName": {},
     "coloring": {
       "scheme": "MEANING_AND_STATUS",
@@ -64,7 +107,9 @@
       "autoRefreshSample": false,
       "_refreshTrigger": 0
     },
-    "exploreUIParams": {},
+    "exploreUIParams": {
+      "autoRefresh": true
+    },
     "globalSearchQuery": "",
     "explorationFilters": [],
     "previewMode": "ALL_ROWS"
