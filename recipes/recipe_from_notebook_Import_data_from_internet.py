@@ -1,8 +1,8 @@
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 import chardet
 import dataiku
-import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
+import pandas as pd, numpy as np
 import os
 import tempfile
 
