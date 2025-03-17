@@ -226,7 +226,7 @@ plt.show()
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Recipe outputs
 df_repetitive = dataiku.Dataset("df_repetitive")
-df_repetitive.write_with_schema(pandas_dataframe)
+df_repetitive.write_with_schema(df_repetitive)
 
 df_unreadable = dataiku.Dataset("df_unreadable")
 df_unreadable.write_with_schema(pandas_dataframe)
