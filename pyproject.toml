@@ -16,6 +16,7 @@ dependencies = [
     "jupyter-core==4.12.0",
     "kaggle>=1.7.4.1",
     "matplotlib>=3.9.4",
+    "nltk>=3.9.1",
     "numpy<1.27",
     "pandas>=2.2,<2.3",
     "pexpect==4.8.0",
