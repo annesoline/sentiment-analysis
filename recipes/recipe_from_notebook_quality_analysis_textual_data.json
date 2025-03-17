@@ -46,6 +46,10 @@
         {
           "ref": "very_short_tweets",
           "appendMode": false
+        },
+        {
+          "ref": "enhanced_tweets_informations",
+          "appendMode": false
         }
       ]
     }
