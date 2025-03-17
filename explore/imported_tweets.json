@@ -77,7 +77,7 @@
         "maxReadUncompressedBytes": -1
       },
       "autoRefreshSample": false,
-      "_refreshTrigger": 1742212216787
+      "_refreshTrigger": 1742212284563
     },
     "vizSampling": {
       "selection": {
@@ -118,7 +118,11 @@
           "columnType": "ALPHANUM",
           "currentMode": "ALPHANUM",
           "sort": "count",
-          "selectedValues": {}
+          "selectedValues": {
+            "I need a hug ": true,
+            "i need a hug ": true,
+            "I need a hug. ": true
+          }
         },
         "alphanumFilter": {
           "type": "alphanum",
