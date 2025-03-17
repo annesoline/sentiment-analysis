@@ -32,7 +32,7 @@
     "main": {
       "items": [
         {
-          "ref": "df_repetitive",
+          "ref": "repetitive_tweets",
           "appendMode": false
         },
         {

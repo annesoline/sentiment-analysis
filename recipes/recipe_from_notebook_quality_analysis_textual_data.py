@@ -225,7 +225,8 @@ plt.show()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Recipe outputs
-df_repetitive = dataiku.Dataset("df_repetitive")
+# Dataset df_repetitive renamed to repetitive_tweets by anne-soline.guilbert-ly@dataiku.com on 2025-03-17 10:33:36
+df_repetitive = dataiku.Dataset("repetitive_tweets")
 df_repetitive.write_with_schema(df_repetitive)
 
 df_unreadable = dataiku.Dataset("df_unreadable")
