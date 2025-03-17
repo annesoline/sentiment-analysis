@@ -4,6 +4,10 @@
       "remote": "git@github.com:remit0/edf-commons.git",
       "checkout": "refs/heads/main",
       "remotePath": "",
+      "lastHash": "7f34cd59c6049bbdd4ccdcaa2d7f8edc55915947",
+      "conflictingFiles": [],
+      "resolvedFiles": [],
+      "faultyHash": "",
       "isDirty": false
     }
   },
