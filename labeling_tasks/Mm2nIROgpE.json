@@ -1,7 +1,9 @@
 {
+  "dataColumn": "text",
   "owner": "anne-soline.guilbert-ly@dataiku.com",
   "name": "label_enhanced_tweets_informations",
   "type": "TEXT_CLASSIFICATION",
+  "idColumn": "id",
   "labelColumnName": "label",
   "extraColumns": [],
   "inputs": {

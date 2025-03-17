@@ -42,8 +42,15 @@
     "view": "VERIFIED_ONLY"
   },
   "schema": {
-    "columns": [],
-    "userModified": false
+    "columns": [
+      {"name":"labeling_task_id","type":"string"},
+      {"name":"id","type":"string"},
+      {"name":"text","type":"string"},
+      {"name":"annotation_date","type":"bigint"},
+      {"name":"reviewer","type":"string"},
+      {"name":"label","type":"string"}
+    ],
+    "userModified": true
   },
   "typeSystemVersion": "V2",
   "dkuProperties": [],
