@@ -227,9 +227,12 @@ plt.show()
 # Recipe outputs
 df_repetitive = dataiku.Dataset("df_repetitive")
 df_repetitive.write_with_schema(pandas_dataframe)
+
 df_unreadable = dataiku.Dataset("df_unreadable")
 df_unreadable.write_with_schema(pandas_dataframe)
+
 df_high_percentage_numbers = dataiku.Dataset("df_high_percentage_numbers")
 df_high_percentage_numbers.write_with_schema(pandas_dataframe)
+
 df_very_short_tweets = dataiku.Dataset("df_very_short_tweets")
 df_very_short_tweets.write_with_schema(pandas_dataframe)
