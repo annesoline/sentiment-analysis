@@ -32,7 +32,7 @@
     "input_dataset": {
       "items": [
         {
-          "ref": "enhanced_tweets_informations",
+          "ref": "filtered_tweets",
           "deps": []
         }
       ]
