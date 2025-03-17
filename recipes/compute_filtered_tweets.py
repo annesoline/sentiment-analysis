@@ -15,7 +15,6 @@ enhanced_tweets_informations_df = enhanced_tweets_informations.get_dataframe()
 filtered_tweets_df = enhanced_tweets_informations_df # For this sample code, simply copy input to output
 filtered_tweets_df = filtered_tweets_df.sample(n=10000, random_state=42)
 
-
 # Write recipe outputs
 filtered_tweets = dataiku.Dataset("filtered_tweets")
 filtered_tweets.write_with_schema(filtered_tweets_df)
