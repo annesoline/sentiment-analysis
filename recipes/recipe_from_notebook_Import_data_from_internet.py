@@ -1,6 +1,3 @@
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE_ASSISTANT_MAGIC_CELL
-# %load_ext ai_code_assistant
-
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 import dataiku
 import pandas as pd, numpy as np
