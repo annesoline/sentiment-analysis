@@ -37,7 +37,6 @@ print(f"\nNumber of empty tweets: {empty_tweets}")
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Create a new dataframe with the original columns plus the new length columns
-df = df.copy()
 df['tweet_length_chars'] = df['text'].str.len()
 df['tweet_length_words'] = df['text'].str.split().apply(len)
 df.head()
