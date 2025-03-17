@@ -102,7 +102,6 @@ print(f"Tweets containing @mentions: {tweets_with_mentions} ({tweets_with_mentio
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Create new dataframe with mention_only column
-df = df.copy()
 df['mention_only'] = df['text'].str.match(r'^\s*@\w+\s*$').astype(int)
 
 # Print summary
