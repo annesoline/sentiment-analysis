@@ -1,0 +1,51 @@
+{
+  "type": "CustomCode_nlp-visualization-wordcloud",
+  "neverRecomputeExistingPartitions": false,
+  "params": {
+    "customConfig": {},
+    "containerSelection": {
+      "containerMode": "INHERIT"
+    }
+  },
+  "customMeta": {
+    "kv": {}
+  },
+  "redispatchPartitioning": false,
+  "maxRunningActivities": 0,
+  "hashPropagationBehavior": "INHERIT",
+  "variables": {},
+  "dkuProperties": [],
+  "inputs": {
+    "input_dataset": {
+      "items": [
+        {
+          "ref": "enhanced_tweets_informations",
+          "deps": []
+        }
+      ]
+    }
+  },
+  "outputs": {
+    "output_folder": {
+      "items": [
+        {
+          "ref": "j46JG2PK",
+          "appendMode": false
+        }
+      ]
+    }
+  },
+  "labels": [],
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "anne-soline.guilbert-ly@dataiku.com"
+    },
+    "lastModifiedOn": 1742210730672
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}
