@@ -37,11 +37,13 @@
   },
   "tags": [],
   "params": {
+    "labelingTaskId": "Mm2nIROgpE",
+    "labelingTaskType": "TEXT_CLASSIFICATION",
     "view": "VERIFIED_ONLY"
   },
   "schema": {
     "columns": [],
-    "userModified": true
+    "userModified": false
   },
   "typeSystemVersion": "V2",
   "dkuProperties": [],

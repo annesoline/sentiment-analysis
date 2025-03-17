@@ -1,0 +1,50 @@
+{
+  "owner": "anne-soline.guilbert-ly@dataiku.com",
+  "name": "label_enhanced_tweets_informations",
+  "type": "TEXT_CLASSIFICATION",
+  "labelColumnName": "label",
+  "extraColumns": [],
+  "inputs": {
+    "metadata": {
+      "items": [
+        {
+          "ref": "enhanced_tweets_informations"
+        }
+      ]
+    }
+  },
+  "outputs": {
+    "main": {
+      "items": [
+        {
+          "ref": "labelled_tweets"
+        }
+      ]
+    }
+  },
+  "classes": [],
+  "instructions": "",
+  "inputPlaceholder": "Label...",
+  "allowEmptyLabels": true,
+  "minNbAnnotatorsPerRecord": 1,
+  "autoValidateAnswers": false,
+  "permissions": [],
+  "commentSettings": {
+    "enabled": false,
+    "columnName": "comment",
+    "placeholder": "Comments...",
+    "autoValidateStrategy": "CONCATENATE_IF_DIFFERENT"
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "anne-soline.guilbert-ly@dataiku.com"
+    },
+    "lastModifiedOn": 1742227416499
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}
