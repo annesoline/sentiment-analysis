@@ -237,5 +237,20 @@ language_counts = df['language'].value_counts()
 print("\nLanguage distribution in tweets:")
 print(language_counts)
 
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-df.head()
+# Recipe outputs
+enhanced_tweets_informations  = dataiku.Dataset("enhanced_tweets_informations")
+enhanced_tweets_informations.write_with_schema(df)
+
+# Dataset df_repetitive renamed to repetitive_tweets by anne-soline.guilbert-ly@dataiku.com on 2025-03-17 10:33:36
+repetitive_tweets = dataiku.Dataset("repetitive_tweets")
+repetitive_tweets.write_with_schema(df_repetitive)
+# Dataset df_unreadable renamed to unreadable_tweets by anne-soline.guilbert-ly@dataiku.com on 2025-03-17 10:33:52
+unreadable_tweets = dataiku.Dataset("unreadable_tweets")
+unreadable_tweets.write_with_schema(df_unreadable)
+# Dataset df_high_percentage_numbers renamed to high_percentage_numbers_tweets by anne-soline.guilbert-ly@dataiku.com on 2025-03-17 10:33:58
+high_percentage_numbers_tweets = dataiku.Dataset("high_percentage_numbers_tweets")
+high_percentage_numbers_tweets.write_with_schema(df_high_percentage_numbers)
+
+# Dataset df_very_short_tweets renamed to very_short_tweets by anne-soline.guilbert-ly@dataiku.com on 2025-03-17 10:34:03
+very_short_tweets = dataiku.Dataset("very_short_tweets")
+very_short_tweets.write_with_schema(df_very_short_tweets)
