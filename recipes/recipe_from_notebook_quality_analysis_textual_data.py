@@ -247,9 +247,6 @@ df.head()
 enhanced_tweets_informations  = dataiku.Dataset("enhanced_tweets_informations")
 enhanced_tweets_informations.write_with_schema(df)
 
-# Dataset df_repetitive renamed to repetitive_tweets by anne-soline.guilbert-ly@dataiku.com on 2025-03-17 10:33:36
-repetitive_tweets = dataiku.Dataset("repetitive_tweets")
-repetitive_tweets.write_with_schema(df_repetitive)
 # Dataset df_unreadable renamed to unreadable_tweets by anne-soline.guilbert-ly@dataiku.com on 2025-03-17 10:33:52
 unreadable_tweets = dataiku.Dataset("unreadable_tweets")
 unreadable_tweets.write_with_schema(df_unreadable)
