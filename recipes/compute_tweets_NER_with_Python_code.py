@@ -35,15 +35,15 @@ def perform_ner_inference(model_name, input_df):
 
     # Perform token classification on each row of the dataframe
     predicted_labels = []
-    for index, row in df.iterrows():
+    for index, row in input_df.iterrows():
         document_id = row["id"]
         text = row["text"]
         results = token_classification_pipeline(text)
         predicted_labels.append(results)
         
-    df['predicted_labels'] = predicted_labels
+    input_df['predicted_labels'] = predicted_labels
 
-    return df
+    return input_df
 
 document_scored_df = perform_ner_inference(model_name, df)
 
