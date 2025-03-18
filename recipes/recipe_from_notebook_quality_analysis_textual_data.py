@@ -1,17 +1,14 @@
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 import matplotlib.pyplot as plt
 import pandas as pd
-import dataiku
 import string
-
 pd.set_option('display.max_colwidth', None)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
 # # 1. Load tweets dataset
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-imported_tweets = dataiku.Dataset("imported_tweets")
-df = imported_tweets.get_dataframe()
+df = pd.read_csv('tweets.csv', encoding='latin-1', names=['target', 'id', 'date', 'flag', 'user', 'text', 'tweet_length_chars', 'tweet_length_words', 'mention_only', 'unreadable', 'too_many_numbers'])
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 df.head()
@@ -111,13 +108,16 @@ unique_chars = set(all_chars)
 print(f"\nNumber of unique characters used: {len(unique_chars)}")
 print(f"Unique characters used: {''.join(sorted(unique_chars))}")
 
-# Create dataframe with tweets containing repetitive characters (like 'aaaaaa' or '!!!!!!!')
-df_repetitive = df[df['text'].str.match(r'.*(.)\1{4,}.*')].copy()
-repetitive_chars = len(df_repetitive)
-print(f"\nTweets with repetitive characters: {repetitive_chars} ({(repetitive_chars/len(df)*100):.2f}%)")
-print("\nExamples of tweets with repetitive characters:")
-print(df_repetitive['text'].head(10))
+# Create a new column 'repetitive_chars' with 1 if there are repetitive characters and 0 otherwise
+df['repetitive_chars'] = df['text'].str.contains(r'(.)\1{4,}').astype(int)
 
+# Count tweets with repetitive characters
+repetitive_chars = df['repetitive_chars'].sum()
+print(f"\nTweets with repetitive characters: {repetitive_chars} ({(repetitive_chars/len(df)*100):.2f}%)")
+
+# Display examples of tweets with repetitive characters
+print("\nExamples of tweets with repetitive characters:")
+print(df[df['repetitive_chars'] == 1]['text'].head(10))
 
 # URL and mention analysis
 tweets_with_urls = len(df[df['text'].str.contains('http|www', regex=True)])
@@ -156,6 +156,7 @@ print(df[df['mention_only'] == 1]['text'].head())
 # ## 2.5. Tweets with special characters and unreadable tweets
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+import string
 
 special_chars = [c for c in unique_chars 
                 if c not in string.ascii_letters 
@@ -237,20 +238,5 @@ language_counts = df['language'].value_counts()
 print("\nLanguage distribution in tweets:")
 print(language_counts)
 
-# Recipe outputs
-enhanced_tweets_informations  = dataiku.Dataset("enhanced_tweets_informations")
-enhanced_tweets_informations.write_with_schema(df)
-
-# Dataset df_repetitive renamed to repetitive_tweets by anne-soline.guilbert-ly@dataiku.com on 2025-03-17 10:33:36
-repetitive_tweets = dataiku.Dataset("repetitive_tweets")
-repetitive_tweets.write_with_schema(df_repetitive)
-# Dataset df_unreadable renamed to unreadable_tweets by anne-soline.guilbert-ly@dataiku.com on 2025-03-17 10:33:52
-unreadable_tweets = dataiku.Dataset("unreadable_tweets")
-unreadable_tweets.write_with_schema(df_unreadable)
-# Dataset df_high_percentage_numbers renamed to high_percentage_numbers_tweets by anne-soline.guilbert-ly@dataiku.com on 2025-03-17 10:33:58
-high_percentage_numbers_tweets = dataiku.Dataset("high_percentage_numbers_tweets")
-high_percentage_numbers_tweets.write_with_schema(df_high_percentage_numbers)
-
-# Dataset df_very_short_tweets renamed to very_short_tweets by anne-soline.guilbert-ly@dataiku.com on 2025-03-17 10:34:03
-very_short_tweets = dataiku.Dataset("very_short_tweets")
-very_short_tweets.write_with_schema(df_very_short_tweets)
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+df.head()
