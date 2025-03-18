@@ -41,6 +41,7 @@
     },
     "lastModifiedOn": 1741959715676
   },
+  "shortDesc": "This script is generated from the notebook \"Import data from internet\". It is using the Kaggle API to import the tweets csv file and save it first into a folder called \"data\", then, create a Dataiku dataset with the csv file.",
   "tags": [],
   "customFields": {},
   "checklists": {
