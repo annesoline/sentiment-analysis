@@ -32,10 +32,6 @@
     "main": {
       "items": [
         {
-          "ref": "repetitive_tweets",
-          "appendMode": false
-        },
-        {
           "ref": "unreadable_tweets",
           "appendMode": false
         },
