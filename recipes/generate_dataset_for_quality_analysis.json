@@ -58,6 +58,7 @@
     },
     "lastModifiedOn": 1742206995424
   },
+  "shortDesc": "This recipe is generated from the Notebook \"quality_analysis_textual_data\". This notebook shows all the analysis performed on the dataset globally, but more importantly, on the \"text\" column containing the tweets. You can view its specificities in the notebook. ",
   "tags": [],
   "customFields": {},
   "checklists": {
