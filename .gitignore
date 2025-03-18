@@ -9,3 +9,6 @@ wheels/
 # Virtual environments
 .venv
 training.1600000.processed.noemoticon.csv
+tweets.csv
+enhanced_tweets_informations.csv
+.cache/*
