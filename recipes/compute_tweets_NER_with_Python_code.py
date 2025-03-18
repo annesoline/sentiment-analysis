@@ -13,7 +13,6 @@ hf_transformers_home_dir = os.getenv("HF_HOME")
 enhanced_tweets_informations = dataiku.Dataset("enhanced_tweets_informations")
 df = enhanced_tweets_informations.get_dataframe()
 
-
 # Compute recipe outputs from inputs
 # Define the model to use
 model_name = "dslim/bert-base-NER"
@@ -47,9 +46,7 @@ def perform_ner_inference(model_name, input_df):
 
 document_scored_df = perform_ner_inference(model_name, df)
 
-
 tweets_NER_with_Python_code_df = df # For this sample code, simply copy input to output
-
 
 # Write recipe outputs
 tweets_NER_with_Python_code = dataiku.Dataset("tweets_NER_with_Python_code")
