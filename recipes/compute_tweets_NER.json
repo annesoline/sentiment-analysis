@@ -4,7 +4,6 @@
   "params": {
     "customConfig": {
       "text_language_spacy": "en",
-      "text_language_flair": "en",
       "advanced_settings": false,
       "ner_model": "spacy",
       "output_single_json": false,
@@ -28,7 +27,7 @@
     "input_dataset": {
       "items": [
         {
-          "ref": "enhanced_tweets_informations",
+          "ref": "filtered_tweets",
           "deps": []
         }
       ]
