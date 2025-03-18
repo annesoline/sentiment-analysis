@@ -110,16 +110,16 @@ unique_chars = set(all_chars)
 print(f"\nNumber of unique characters used: {len(unique_chars)}")
 print(f"Unique characters used: {''.join(sorted(unique_chars))}")
 
-# Create a new column 'repetitive_chars' with 1 if there are repetitive characters and 0 otherwise
-df['repetitive_chars'] = df['text'].str.contains(r'(.)\1{4,}').astype(int)
+# Create a new column 'repetitive_letters' with 1 if there are repetitive letters and 0 otherwise
+df['repetitive_letters'] = df['text'].str.contains(r'([a-zA-Z])\1{4,}').astype(int)
 
-# Count tweets with repetitive characters
-repetitive_chars = df['repetitive_chars'].sum()
-print(f"\nTweets with repetitive characters: {repetitive_chars} ({(repetitive_chars/len(df)*100):.2f}%)")
+# Count tweets with repetitive letters
+repetitive_letters = df['repetitive_letters'].sum()
+print(f"\nTweets with repetitive letters: {repetitive_letters} ({(repetitive_letters/len(df)*100):.2f}%)")
 
-# Display examples of tweets with repetitive characters
-print("\nExamples of tweets with repetitive characters:")
-print(df[df['repetitive_chars'] == 1]['text'].head(10))
+# Display examples of tweets with repetitive letters
+print("\nExamples of tweets with repetitive letters:")
+print(df[df['repetitive_letters'] == 1]['text'].head(10))
 
 # URL and mention analysis
 tweets_with_urls = len(df[df['text'].str.contains('http|www', regex=True)])
