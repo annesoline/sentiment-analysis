@@ -2,7 +2,6 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 import string
-
 import dataiku
 pd.set_option('display.max_colwidth', None)
 
