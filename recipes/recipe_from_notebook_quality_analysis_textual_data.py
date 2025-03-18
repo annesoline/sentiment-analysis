@@ -8,7 +8,8 @@ pd.set_option('display.max_colwidth', None)
 # # 1. Load tweets dataset
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-df = pd.read_csv('tweets.csv', encoding='latin-1', names=['target', 'id', 'date', 'flag', 'user', 'text', 'tweet_length_chars', 'tweet_length_words', 'mention_only', 'unreadable', 'too_many_numbers'])
+imported_tweets = dataiku.Dataset("imported_tweets")
+df = imported_tweets.get_dataframe()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 df.head()
