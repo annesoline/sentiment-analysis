@@ -12,3 +12,4 @@ training.1600000.processed.noemoticon.csv
 tweets.csv
 enhanced_tweets_informations.csv
 .cache/*
+frequency_dictionary_en_82_765.txt
