@@ -101,7 +101,7 @@ print(df_very_short_tweets['text'].head(10))
 # As shown in the example above, very short tweets can still be used for sentiment analysis.
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
-# ## 2.4. Tweet specificities (characters, URL, and mentions)
+# ## 2.4. Tweet specificities (characters, repetitive letters, URL, and mentions)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Unique characters analysis
