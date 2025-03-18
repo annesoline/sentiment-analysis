@@ -2,6 +2,8 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 import dataiku
+import string
+
 pd.set_option('display.max_colwidth', None)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
@@ -154,7 +156,6 @@ print(df[df['mention_only'] == 1]['text'].head())
 # ## 2.5. Tweets with special characters and unreadable tweets
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-import string
 
 special_chars = [c for c in unique_chars 
                 if c not in string.ascii_letters 
