@@ -32,6 +32,27 @@ print(f"There are {df['user'].nunique()} different users.")
 empty_tweets = len(df[df['text'].str.len() == 0])
 print(f"\nNumber of empty tweets: {empty_tweets}")
 
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+# Check for duplicate tweets
+duplicate_tweets = df.duplicated(subset='text').sum()
+print(f"Number of duplicate tweets: {duplicate_tweets}")
+# Display some duplicated tweets
+duplicated_tweets_df = df[df.duplicated(subset='text', keep=False)]
+print("\nSample of duplicated tweets:")
+print(duplicated_tweets_df[['text']].head())
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+# Function to preprocess text by converting to lowercase and removing punctuation
+def preprocess_text(text):
+    return text.lower().translate(str.maketrans('', '', string.punctuation))
+
+# Check for duplicate tweets (case insensitive and ignoring punctuation)
+duplicate_tweets_case_insensitive_no_punct = df['text'].apply(preprocess_text).duplicated().sum()
+print(f"Number of duplicate tweets (case insensitive and ignoring punctuation): {duplicate_tweets_case_insensitive_no_punct}")
+
+# Create a new column 'is_duplicated' to tag duplicated tweets, except the first one
+df['is_duplicated'] = df['text'].apply(preprocess_text).duplicated(keep='first').astype(int)
+
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
 # ## 2.2. Tweet length
 
@@ -59,7 +80,27 @@ print("\nMost common tweet lengths (in words):")
 print(df['tweet_length_words'].value_counts().head())
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
-# ## 2.3. Tweet specificities (characters, URL, and mentions)
+# ## 2.3. Very short tweets
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+# Check for very short tweets that might be low quality
+# Create a new DataFrame with only very short tweets
+df_very_short_tweets = df[df['tweet_length_chars'] < 10]
+
+# Count and display the number of very short tweets
+very_short_tweets_count = df_very_short_tweets.shape[0]
+print(f"\nVery short tweets (<10 chars): {very_short_tweets_count} ({(very_short_tweets_count/len(df)*100):.2f}%)")
+
+# Display examples of very short tweets
+print("\nExamples of very short tweets:")
+print(df_very_short_tweets['text'].head(10))
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
+# ### Comments
+# As shown in the example above, very short tweets can still be used for sentiment analysis.
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
+# ## 2.4. Tweet specificities (characters, URL, and mentions)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Unique characters analysis
@@ -110,7 +151,7 @@ print("\nExample tweets that are only mentions:")
 print(df[df['mention_only'] == 1]['text'].head())
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
-# ## 2.4. Tweets with special characters and unreadable tweets
+# ## 2.5. Tweets with special characters and unreadable tweets
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 import string
@@ -139,16 +180,6 @@ print("\nExample unreadable tweets:")
 print(df_unreadable[['text']].head(10))
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-# Show tweets containing special characters
-print("\nTweets containing special characters:")
-print("-" * 50)
-for char in special_chars:
-    tweets_with_char = df[df['text'].str.contains(char, regex=False)]
-    if len(tweets_with_char) > 0:
-        print(f"\nTweets containing '{char}':")
-        print(tweets_with_char[['text']].head())
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Check for tweets with high percentage of numbers
 df_high_percentage_numbers = df.copy()
 number_ratio = df_high_percentage_numbers['text'].str.count(r'[0-9]') / df_high_percentage_numbers['tweet_length_chars']
@@ -161,47 +192,12 @@ print(df_high_percentage_numbers[df_high_percentage_numbers['too_many_numbers'] 
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
 # ### Comments
-# In this section, we reviewed tweets containing excessive special characters that render them unreadable, and created a column to tag these tweets so they can be removed from the dataset later.
+# In this section, we reviewed tweets containing excessive special characters that render them unreadable, and created a column to tag these tweets so they can be removed from the dataset later. We did the same for the tweets with too many numbers.
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
-# ## 2.5. Short tweets, repetitive characters, all caps tweets
+# ## 2.6. Word/character ratio
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-# Check for very short tweets that might be low quality
-# Create a new DataFrame with only very short tweets
-df_very_short_tweets = df[df['tweet_length_chars'] < 10]
-
-# Count and display the number of very short tweets
-very_short_tweets_count = df_very_short_tweets.shape[0]
-print(f"\nVery short tweets (<10 chars): {very_short_tweets_count} ({(very_short_tweets_count/len(df)*100):.2f}%)")
-
-# Display examples of very short tweets
-print("\nExamples of very short tweets:")
-print(df_very_short_tweets['text'].head(10))
-
-# Check for all caps tweets (possible spam/low quality)
-all_caps_tweets = df[df['text'].str.match(r'^[A-Z0-9\s\W]+$')].shape[0]
-print(f"\nAll caps tweets: {all_caps_tweets} ({(all_caps_tweets/len(df)*100):.2f}%)")
-print("\nExamples of all caps tweets:")
-print(df[df['text'].str.match(r'^[A-Z0-9\s\W]+$')]['text'].head(10))
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
-# ### Comments
-# As shown in the example above, very short tweets can still be used for sentiment analysis.
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
-# ## 2.6. Average punctuation marks per tweet, word/character ratio
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-# Calculate average punctuation per tweet
-punct_counts = df['text'].str.count(f'[{string.punctuation}]')
-avg_punct = punct_counts.mean()
-print(f"\nAverage punctuation marks per tweet: {avg_punct:.2f}")
-
-# Check for tweets with excessive punctuation
-excessive_punct = df[punct_counts > punct_counts.mean() + 2*punct_counts.std()].shape[0]
-print(f"Tweets with excessive punctuation: {excessive_punct} ({(excessive_punct/len(df)*100):.2f}%)")
-
 # Analyze word/character ratio (very low ratio might indicate spam or low quality)
 char_word_ratio = df['tweet_length_chars'] / df['tweet_length_words']
 suspicious_ratio = df[char_word_ratio > char_word_ratio.mean() + 2*char_word_ratio.std()].shape[0]
@@ -221,23 +217,24 @@ plt.show()
 # ### Comments
 # Tweets with excessive punctuations are often containing dots or a URL. Therefore, it is not necessary to remove them from the dataset.
 
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
+# ## 2.7. Language detection
+
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-# Recipe outputs
-enhanced_tweets_informations  = dataiku.Dataset("enhanced_tweets_informations")
-enhanced_tweets_informations.write_with_schema(df)
+from ftlangdetect import detect
+def detect_language(text):
+    try:
+        return detect(text)['lang']
+    except Exception as e:
+        return 'unknown'
 
-# Dataset df_repetitive renamed to repetitive_tweets by anne-soline.guilbert-ly@dataiku.com on 2025-03-17 10:33:36
-repetitive_tweets = dataiku.Dataset("repetitive_tweets")
-repetitive_tweets.write_with_schema(df_repetitive)
+# Create a new column with the detected language
+df['language'] = df['text'].apply(detect_language)
 
-# Dataset df_unreadable renamed to unreadable_tweets by anne-soline.guilbert-ly@dataiku.com on 2025-03-17 10:33:52
-unreadable_tweets = dataiku.Dataset("unreadable_tweets")
-unreadable_tweets.write_with_schema(df_unreadable)
+# Display the count of tweets per detected language
+language_counts = df['language'].value_counts()
+print("\nLanguage distribution in tweets:")
+print(language_counts)
 
-# Dataset df_high_percentage_numbers renamed to high_percentage_numbers_tweets by anne-soline.guilbert-ly@dataiku.com on 2025-03-17 10:33:58
-high_percentage_numbers_tweets = dataiku.Dataset("high_percentage_numbers_tweets")
-high_percentage_numbers_tweets.write_with_schema(df_high_percentage_numbers)
-
-# Dataset df_very_short_tweets renamed to very_short_tweets by anne-soline.guilbert-ly@dataiku.com on 2025-03-17 10:34:03
-very_short_tweets = dataiku.Dataset("very_short_tweets")
-very_short_tweets.write_with_schema(df_very_short_tweets)
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+df.head()
