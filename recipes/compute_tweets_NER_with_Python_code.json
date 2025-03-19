@@ -23,7 +23,7 @@
     "main": {
       "items": [
         {
-          "ref": "enhanced_tweets_informations",
+          "ref": "labelled_tweets",
           "deps": []
         }
       ]
