@@ -242,24 +242,22 @@ df['encrypted_text'] = df['encrypted_text'].str.lower()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Create one dataframe with encrypted sensitive data
-sensible_data_encrypted_df = df.drop(columns=['text', 'text_without_sensible_data'], errors='ignore')
-sensible_data_encrypted_df = sensible_data_encrypted_df.rename(columns={'encrypted_text': 'text'})
+sensitive_data_encrypted_df = df.drop(columns=['text', 'text_without_sensible_data'], errors='ignore')
+sensitive_data_encrypted_df = sensitive_data_encrypted_df.rename(columns={'encrypted_text': 'text'})
 
 # Create one dataframe with removed sensitive data
-sensible_data_removed_df = df.drop(columns=['text', 'encrypted_text'])
-sensible_data_removed_df = sensible_data_removed_df.rename(columns={'text_without_sensible_data': 'text'})
+sensitive_data_removed_df = df.drop(columns=['text', 'encrypted_text'])
+sensitive_data_removed_df = sensible_data_removed_df.rename(columns={'text_without_sensible_data': 'text'})
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Recipe outputs
 cleaned_tweets = dataiku.Dataset("cleaned_tweets")
 cleaned_tweets.write_with_schema(df)
 
-# Dataset sensible_data_removed renamed to sensitive_data_removed by anne-soline.guilbert-ly@dataiku.com on 2025-03-19 20:29:30
 sensible_data_removed = dataiku.Dataset("sensitive_data_removed")
-sensible_data_removed.write_with_schema(sensible_data_removed_df)
+sensible_data_removed.write_with_schema(sensitive_data_removed_df)
 
-# Dataset sensible_data_encrypted renamed to sensitive_data_encrypted by anne-soline.guilbert-ly@dataiku.com on 2025-03-19 20:29:19
 sensible_data_encrypted = dataiku.Dataset("sensitive_data_encrypted")
-sensible_data_encrypted.write_with_schema(sensible_data_encrypted_df)
+sensible_data_encrypted.write_with_schema(sensitive_data_encrypted_df)
 
 
