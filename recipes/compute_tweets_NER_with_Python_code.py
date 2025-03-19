@@ -11,7 +11,7 @@ hf_transformers_home_dir = os.getenv("HF_HOME")
 
 # Read recipe inputs
 labelled_tweets = dataiku.Dataset("labelled_tweets")
-labelled_tweets.get_dataframe()
+df = labelled_tweets.get_dataframe()
 
 # Compute recipe outputs from inputs
 # Define the model to use
