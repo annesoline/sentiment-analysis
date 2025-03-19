@@ -254,8 +254,8 @@ sensitive_data_removed_df = sensible_data_removed_df.rename(columns={'text_witho
 cleaned_tweets = dataiku.Dataset("cleaned_tweets")
 cleaned_tweets.write_with_schema(df)
 
-sensible_data_removed = dataiku.Dataset("sensitive_data_removed")
-sensible_data_removed.write_with_schema(sensitive_data_removed_df)
+sensitive_data_removed = dataiku.Dataset("sensitive_data_removed")
+sensitive_data_removed.write_with_schema(sensitive_data_removed_df)
 
 sensible_data_encrypted = dataiku.Dataset("sensitive_data_encrypted")
 sensible_data_encrypted.write_with_schema(sensitive_data_encrypted_df)
