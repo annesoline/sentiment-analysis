@@ -36,7 +36,7 @@
           "appendMode": false
         },
         {
-          "ref": "sensible_data_encrypted",
+          "ref": "sensitive_data_encrypted",
           "appendMode": false
         },
         {
