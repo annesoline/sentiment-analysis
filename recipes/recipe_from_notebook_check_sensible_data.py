@@ -57,7 +57,7 @@ import re
 # Define a function to extract email addresses
 def extract_email(text):
     # Regular expression pattern for matching email addresses
-    email_pattern = r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
+    email_pattern = r'[\w\-\.]+@([\w-]+\.)+[\w-]{2,}'
     # Search for the pattern in the text
     match = re.search(email_pattern, text)
     if match:
