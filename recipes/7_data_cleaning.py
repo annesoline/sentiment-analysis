@@ -1,5 +1,4 @@
 import dataiku
-import cryptography
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 sensitive_data_identified = dataiku.Dataset("sensitive_data_identified")
