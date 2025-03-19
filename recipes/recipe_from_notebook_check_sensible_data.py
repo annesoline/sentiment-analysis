@@ -13,6 +13,8 @@ pd.set_option('display.max_colwidth', None)
 labelled_tweets = dataiku.Dataset("labelled_tweets")
 df = labelled_tweets.get_dataframe()
 
+# 6. Vérification de la présence de données sensibles
+## 6.1. Named Entities Recognition
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 hf_transformers_home_dir = os.getenv("HF_HOME")
 
