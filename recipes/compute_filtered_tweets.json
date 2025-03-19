@@ -6,7 +6,7 @@
       "envMode": "INHERIT"
     },
     "containerSelection": {
-      "containerMode": "INHERIT"
+      "containerMode": "NONE"
     },
     "skipPrerunValidate": false
   },
