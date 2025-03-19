@@ -46,6 +46,7 @@
     },
     "lastModifiedOn": 1742213079425
   },
+  "shortDesc": "Create a smaller dataset for computation optimization. Keep 5000 rows.",
   "tags": [],
   "customFields": {},
   "checklists": {
