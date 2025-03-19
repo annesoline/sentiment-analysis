@@ -17,11 +17,7 @@
   },
   "outputs": {
     "main": {
-      "items": [
-        {
-          "ref": "labelled_tweets"
-        }
-      ]
+      "items": []
     }
   },
   "classes": [
