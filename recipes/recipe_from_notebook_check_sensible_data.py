@@ -68,12 +68,6 @@ def extract_email(text):
 # Apply the function to the 'text' column and create a new column 'email_present'
 df['email_present'] = df['text'].apply(extract_email)
 
-# Print the text of rows where there is an email
-email_present_rows = df[df['email_present'].notnull()]
-for index, row in email_present_rows.iterrows():
-    print(row['text'])
-    print(row['email_present'])
-
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 
 # Define a function to check for IP addresses and URLs containing IPs
@@ -98,13 +92,7 @@ def check_ip_or_url_presence(text):
 # Apply the function to the 'text' column and create a new column 'ip_present'
 df['ip_present'] = df['text'].apply(check_ip_or_url_presence)
 
-# Print the text of rows where ip_present is not None
-ip_present_rows = df[df['ip_present'].notnull()]
-for index, row in ip_present_rows.iterrows():
-    print(row['text'])
-    print(row['ip_present'])
-
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Recipe outputs
 sensible_data_identified = dataiku.Dataset("sensible_data_identified")
-sensible_data_identified.write_with_schema(pandas_dataframe)
+sensible_data_identified.write_with_schema(df)
