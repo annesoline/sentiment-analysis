@@ -46,7 +46,7 @@ def perform_ner_inference(model_name, input_df):
         results = token_classification_pipeline(text)
         predicted_labels.append(results)
         
-    input_df['predicted_labels'] = predicted_labels
+    input_df['NER'] = predicted_labels
 
     return input_df
 
