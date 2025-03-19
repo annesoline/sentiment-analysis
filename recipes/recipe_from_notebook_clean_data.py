@@ -252,4 +252,10 @@ sensible_data_removed_df = df.drop(columns=['text', 'encrypted_text'])
 cleaned_tweets = dataiku.Dataset("cleaned_tweets")
 cleaned_tweets.write_with_schema(df)
 
+sensible_data_removed = dataiku.Dataset("sensible_data_removed")
+sensible_data_removed.write_with_schema(sensible_data_removed_df)
+
+sensible_data_encrypted = dataiku.Dataset("sensible_data_encrypted")
+sensible_data_encrypted.write_with_schema(sensible_data_encrypted_df)
+
 
