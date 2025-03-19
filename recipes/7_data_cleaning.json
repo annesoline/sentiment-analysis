@@ -40,7 +40,7 @@
           "appendMode": false
         },
         {
-          "ref": "sensible_data_removed",
+          "ref": "sensitive_data_removed",
           "appendMode": false
         }
       ]
