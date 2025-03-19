@@ -11,7 +11,7 @@ enhanced_tweets_informations_df = enhanced_tweets_informations.get_dataframe()
 # Compute recipe outputs from inputs
 
 filtered_tweets_df = enhanced_tweets_informations_df 
-filtered_tweets_df = filtered_tweets_df.sample(n=5000, random_state=42)
+filtered_tweets_df = filtered_tweets_df.sample(n=100000, random_state=42)
 
 # Write recipe outputs
 filtered_tweets = dataiku.Dataset("filtered_tweets")
