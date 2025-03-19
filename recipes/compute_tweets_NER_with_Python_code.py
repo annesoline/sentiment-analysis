@@ -10,8 +10,8 @@ from transformers import AutoTokenizer, AutoModelForTokenClassification
 hf_transformers_home_dir = os.getenv("HF_HOME")
 
 # Read recipe inputs
-enhanced_tweets_informations = dataiku.Dataset("enhanced_tweets_informations")
-df = enhanced_tweets_informations.get_dataframe()
+labelled_tweets = dataiku.Dataset("labelled_tweets")
+labelled_tweets.get_dataframe()
 
 # Compute recipe outputs from inputs
 # Define the model to use
