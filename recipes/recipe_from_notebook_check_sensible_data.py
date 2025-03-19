@@ -54,6 +54,7 @@ def perform_ner_inference(model_name, input_df):
 df = perform_ner_inference(model_name, df)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+## 6.2. Reconnaissance et encryption ou retrait des emails et adresses IP
 import re
 
 # Define a function to extract email addresses
