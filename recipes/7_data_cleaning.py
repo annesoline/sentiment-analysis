@@ -49,24 +49,24 @@ def remove_sensitive_data(row):
     
     return text
 
-# Create a new column 'text_without_sensible_data'
-df['text_without_sensible_data'] = df.apply(remove_sensitive_data, axis=1)
+# Create a new column 'text_without_sensitive_data'
+df['text_without_sensitive_data'] = df.apply(remove_sensitive_data, axis=1)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-# Print text without sensible data for a maximum of 5 rows where it's different from the original text
+# Print text without sensitive data for a maximum of 5 rows where it's different from the original text
 count = 0
 for index, row in df.iterrows():
-    if row['text'] != row['text_without_sensible_data']:
-        print(row['text_without_sensible_data'])
+    if row['text'] != row['text_without_sensitive_data']:
+        print(row['text_without_sensitive_data'])
         print()
         count += 1
         if count >= 5:
             break
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-sensible_data_encrypted_df = df.drop(columns=['text', 'text_without_sensible_data'], errors='ignore')
+sensitive_data_encrypted_df = df.drop(columns=['text', 'text_without_sensitive_data'], errors='ignore')
 
-sensible_data_removed_df = df.drop(columns=['text', 'encrypted_text'])
+sensitive_data_removed_df = df.drop(columns=['text', 'encrypted_text'])
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
 # ## 7.2. Retrait des stopwords et des caractères spéciaux, et normalisation
@@ -220,7 +220,7 @@ def remove_stopwords(text, lang):
 
 # Apply the function to the 'text' column based on the 'language' column
 df['text'] = df.apply(lambda row: remove_stopwords(row['text'], row['language']), axis=1)
-df['text_without_sensible_data'] = df.apply(lambda row: remove_stopwords(row['text_without_sensible_data'], row['language']), axis=1)
+df['text_without_sensitive_data'] = df.apply(lambda row: remove_stopwords(row['text_without_sensitive_data'], row['language']), axis=1)
 df['encrypted_text'] = df.apply(lambda row: remove_stopwords(row['encrypted_text'], row['language']), axis=1)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
@@ -231,23 +231,23 @@ def remove_special_characters(text):
 
 # Apply the function to the 'text' column
 df['text'] = df['text'].apply(remove_special_characters)
-df['text_without_sensible_data'] = df['text_without_sensible_data'].apply(remove_special_characters)
+df['text_without_sensitive_data'] = df['text_without_sensitive_data'].apply(remove_special_characters)
 df['encrypted_text'] = df['encrypted_text'].apply(remove_special_characters)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Normalize the text
 df['text'] = df['text'].str.lower()
-df['text_without_sensible_data'] = df['text_without_sensible_data'].str.lower()
+df['text_without_sensitive_data'] = df['text_without_sensitive_data'].str.lower()
 df['encrypted_text'] = df['encrypted_text'].str.lower()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Create one dataframe with encrypted sensitive data
-sensitive_data_encrypted_df = df.drop(columns=['text', 'text_without_sensible_data'], errors='ignore')
+sensitive_data_encrypted_df = df.drop(columns=['text', 'text_without_sensitive_data'], errors='ignore')
 sensitive_data_encrypted_df = sensitive_data_encrypted_df.rename(columns={'encrypted_text': 'text'})
 
 # Create one dataframe with removed sensitive data
 sensitive_data_removed_df = df.drop(columns=['text', 'encrypted_text'])
-sensitive_data_removed_df = sensible_data_removed_df.rename(columns={'text_without_sensible_data': 'text'})
+sensitive_data_removed_df = sensitive_data_removed_df.rename(columns={'text_without_sensitive_data': 'text'})
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Recipe outputs
@@ -257,7 +257,7 @@ cleaned_tweets.write_with_schema(df)
 sensitive_data_removed = dataiku.Dataset("sensitive_data_removed")
 sensitive_data_removed.write_with_schema(sensitive_data_removed_df)
 
-sensible_data_encrypted = dataiku.Dataset("sensitive_data_encrypted")
-sensible_data_encrypted.write_with_schema(sensitive_data_encrypted_df)
+sensitive_data_encrypted = dataiku.Dataset("sensitive_data_encrypted")
+sensitive_data_encrypted.write_with_schema(sensitive_data_encrypted_df)
 
 
