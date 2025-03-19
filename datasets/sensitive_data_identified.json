@@ -82,7 +82,7 @@
       {"name":"unreadable","type":"bigint"},
       {"name":"too_many_numbers","type":"bigint"},
       {"name":"language","type":"string"},
-      {"name":"predicted_labels","type":"string"},
+      {"name":"NER","type":"string"},
       {"name":"email_present","type":"string"},
       {"name":"ip_present","type":"string"}
     ],
