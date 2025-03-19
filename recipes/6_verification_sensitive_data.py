@@ -97,5 +97,5 @@ df['ip_present'] = df['text'].apply(check_ip_or_url_presence)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Recipe outputs
-sensible_data_identified = dataiku.Dataset("sensible_data_identified")
-sensible_data_identified.write_with_schema(df)
+sensitive_data_identified = dataiku.Dataset("sensitive_data_identified")
+sensitive_data_identified.write_with_schema(df)
