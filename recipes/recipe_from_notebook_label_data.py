@@ -28,18 +28,8 @@ whole_df['label'] = whole_df["text"].apply(get_sentiment_label)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 whole_df = whole_df[['label', 'target', 'id', 'date', 'flag', 'user', 'text', 'is_duplicated', 'tweet_length_chars', 'tweet_length_words', 'repetitive_letters', 'mention_only', 'unreadable', 'too_many_numbers', 'language']]
-whole_df.head(10)
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-
-filtered_tweets = dataiku.Dataset("filtered_tweets")
-df = filtered_tweets.get_dataframe()
-
-df['label'] = df['text'].apply(get_sentiment_label)
-
-df.head(10)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Recipe outputs
 labelled_tweets = dataiku.Dataset("labelled_tweets")
-labelled_tweets.write_with_schema(pandas_dataframe)
+labelled_tweets.write_with_schema(whole_df)
