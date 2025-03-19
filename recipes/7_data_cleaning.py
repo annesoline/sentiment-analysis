@@ -1,7 +1,6 @@
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-# Dataset sensible_data_identified renamed to sensitive_data_identified by anne-soline.guilbert-ly@dataiku.com on 2025-03-19 20:30:23
 sensitive_data_identified = dataiku.Dataset("sensitive_data_identified")
-df = sensible_data_identified.get_dataframe()
+df = sensitive_data_identified.get_dataframe()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
 # # 7. Nettoyage de la donnée
