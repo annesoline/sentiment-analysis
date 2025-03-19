@@ -73,11 +73,14 @@
       {"name":"flag","type":"string"},
       {"name":"user","type":"string"},
       {"name":"text","type":"string"},
+      {"name":"is_duplicated","type":"bigint"},
       {"name":"tweet_length_chars","type":"bigint"},
       {"name":"tweet_length_words","type":"bigint"},
+      {"name":"repetitive_letters","type":"bigint"},
       {"name":"mention_only","type":"bigint"},
       {"name":"unreadable","type":"bigint"},
-      {"name":"too_many_numbers","type":"bigint"}
+      {"name":"too_many_numbers","type":"bigint"},
+      {"name":"language","type":"string"}
     ],
     "userModified": false
   },
