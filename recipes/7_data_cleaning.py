@@ -243,9 +243,11 @@ df['encrypted_text'] = df['encrypted_text'].str.lower()
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Create one dataframe with encrypted sensitive data
 sensible_data_encrypted_df = df.drop(columns=['text', 'text_without_sensible_data'], errors='ignore')
+sensible_data_encrypted_df = sensible_data_encrypted_df.rename(columns={'encrypted_text': 'text'})
 
 # Create one dataframe with removed sensitive data
 sensible_data_removed_df = df.drop(columns=['text', 'encrypted_text'])
+sensible_data_removed_df = sensible_data_removed_df.rename(columns={'text_without_sensible_data': 'text'})
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Recipe outputs
