@@ -153,10 +153,12 @@
       }
     },
     "container": {
-      "containerMode": "INHERIT"
+      "containerMode": "EXPLICIT_CONTAINER",
+      "containerConf": "CPU-XL-2-cpu-16Gb-Ram"
     },
     "containerForVisualRecipesWorkloads": {
-      "containerMode": "INHERIT"
+      "containerMode": "EXPLICIT_CONTAINER",
+      "containerConf": "CPU-4-RAM16Gb-CDE"
     },
     "datasetsCreationSettings": {
       "useGlobal": true,
