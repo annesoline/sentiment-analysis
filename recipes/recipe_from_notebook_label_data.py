@@ -9,7 +9,6 @@ enhanced_tweets_informations = dataiku.Dataset("enhanced_tweets_informations")
 whole_df = enhanced_tweets_informations.get_dataframe()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-
 def get_sentiment_label(text):
     polarity = TextBlob(text).sentiment.polarity
     if polarity <= -0.6:
