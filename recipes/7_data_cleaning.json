@@ -22,7 +22,7 @@
     "main": {
       "items": [
         {
-          "ref": "sensible_data_identified",
+          "ref": "sensitive_data_identified",
           "deps": []
         }
       ]
