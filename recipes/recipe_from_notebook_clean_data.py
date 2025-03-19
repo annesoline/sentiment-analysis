@@ -240,6 +240,13 @@ df['text'] = df['text'].str.lower()
 df['text_without_sensible_data'] = df['text_without_sensible_data'].str.lower()
 df['encrypted_text'] = df['encrypted_text'].str.lower()
 
+# Create one dataframe with encrypted sensitive data
+sensible_data_encrypted_df = df.drop(columns=['text', 'text_without_sensible_data'], errors='ignore')
+
+# Create one dataframe with removed sensitive data
+sensible_data_removed_df = df.drop(columns=['text', 'encrypted_text'])
+
+
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Recipe outputs
 cleaned_tweets = dataiku.Dataset("cleaned_tweets")
