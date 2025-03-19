@@ -22,7 +22,7 @@
     "main": {
       "items": [
         {
-          "ref": "imported_tweets",
+          "ref": "imported_tweets_filtered",
           "deps": []
         }
       ]
