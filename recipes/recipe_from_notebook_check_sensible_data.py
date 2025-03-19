@@ -52,10 +52,6 @@ def perform_ner_inference(model_name, input_df):
 df = perform_ner_inference(model_name, df)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-non_empty_rows = document_scored_df[document_scored_df['predicted_labels'].notnull()]
-non_empty_rows.head()
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 import re
 
 # Define a function to extract email addresses
