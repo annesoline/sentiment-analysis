@@ -243,4 +243,6 @@ df['encrypted_text'] = df['encrypted_text'].str.lower()
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Recipe outputs
 cleaned_tweets = dataiku.Dataset("cleaned_tweets")
-cleaned_tweets.write_with_schema(pandas_dataframe)
+cleaned_tweets.write_with_schema(df)
+
+
