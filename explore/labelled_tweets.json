@@ -1,0 +1,193 @@
+{
+  "script": {
+    "steps": [],
+    "maxProcessedMemTableBytes": -1,
+    "columnsSelection": {
+      "mode": "ALL",
+      "list": [
+        {
+          "name": "label",
+          "d": true
+        },
+        {
+          "name": "target",
+          "d": true
+        },
+        {
+          "name": "id",
+          "d": true
+        },
+        {
+          "name": "date",
+          "d": true
+        },
+        {
+          "name": "flag",
+          "d": true
+        },
+        {
+          "name": "user",
+          "d": true
+        },
+        {
+          "name": "text",
+          "d": true
+        },
+        {
+          "name": "is_duplicated",
+          "d": true
+        },
+        {
+          "name": "tweet_length_chars",
+          "d": true
+        },
+        {
+          "name": "tweet_length_words",
+          "d": true
+        },
+        {
+          "name": "repetitive_letters",
+          "d": true
+        },
+        {
+          "name": "mention_only",
+          "d": true
+        },
+        {
+          "name": "unreadable",
+          "d": true
+        },
+        {
+          "name": "too_many_numbers",
+          "d": true
+        },
+        {
+          "name": "language",
+          "d": true
+        }
+      ]
+    },
+    "columnOrder": [],
+    "columnWidthsByName": {
+      "label": 106,
+      "target": 100,
+      "id": 100,
+      "date": 211,
+      "flag": 100,
+      "user": 120,
+      "text": 300,
+      "is_duplicated": 113,
+      "tweet_length_chars": 150,
+      "tweet_length_words": 150,
+      "repetitive_letters": 150,
+      "mention_only": 105,
+      "unreadable": 100,
+      "too_many_numbers": 135,
+      "language": 100
+    },
+    "columnUseScientificNotationByName": {},
+    "coloring": {
+      "scheme": "MEANING_AND_STATUS",
+      "individualColumns": [],
+      "individualColumnsRules": [],
+      "valueColoringMode": "HASH"
+    },
+    "sorting": [],
+    "analysisColumnData": {},
+    "explorationSampling": {
+      "selection": {
+        "maxRecordsForDisplay": -1,
+        "maxStoredBytes": 104857600,
+        "timeout": -1,
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "partitionSelectionMethod": "ALL",
+        "latestPartitionsN": 1,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "samplingMethod": "RANDOM_FIXED_NB_EXACT",
+        "maxRecords": 10000,
+        "targetRatio": 0.02,
+        "ascending": true,
+        "withinFirstN": -1,
+        "maxReadUncompressedBytes": -1
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 1742398588281
+    },
+    "vizSampling": {
+      "selection": {
+        "useMemTable": false,
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "partitionSelectionMethod": "ALL",
+        "latestPartitionsN": 1,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "samplingMethod": "FULL",
+        "maxRecords": -1,
+        "targetRatio": 0.02,
+        "ascending": true,
+        "withinFirstN": -1,
+        "maxReadUncompressedBytes": -1
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "exploreUIParams": {
+      "autoRefresh": true
+    },
+    "globalSearchQuery": "",
+    "explorationFilters": [
+      {
+        "column": "repetitive_letters",
+        "type": "columnFilter",
+        "currentMode": "FACET",
+        "active": true,
+        "facet": {
+          "type": "facet",
+          "column": "repetitive_letters",
+          "columnType": "NUMERICAL",
+          "currentMode": "ALPHANUM",
+          "sort": "count",
+          "selectedValues": {
+            "1": true
+          }
+        },
+        "alphanumFilter": {
+          "type": "alphanum",
+          "column": "repetitive_letters",
+          "selectedValues": [],
+          "params": {
+            "mode": "full_string",
+            "normalization": "exact"
+          }
+        },
+        "validityFilter": {
+          "type": "validity",
+          "column": "repetitive_letters",
+          "params": {
+            "type": "LongMeaning",
+            "ok": true,
+            "nok": true,
+            "empty": true
+          }
+        }
+      }
+    ],
+    "previewMode": "ALL_ROWS"
+  },
+  "charts": [],
+  "interactiveSearch": {
+    "savedQueries": []
+  },
+  "customMeasures": []
+}
