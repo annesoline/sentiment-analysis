@@ -49,7 +49,7 @@ def perform_ner_inference(model_name, input_df):
     return input_df
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-NER_df = perform_ner_inference(model_name, df)
+df = perform_ner_inference(model_name, df)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 non_empty_rows = document_scored_df[document_scored_df['predicted_labels'].notnull()]
