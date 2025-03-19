@@ -1,5 +1,6 @@
 import dataiku
-
+import pandas as pd
+import re
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 sensitive_data_identified = dataiku.Dataset("sensitive_data_identified")
 df = sensitive_data_identified.get_dataframe()
