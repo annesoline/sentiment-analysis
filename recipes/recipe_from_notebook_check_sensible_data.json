@@ -7,7 +7,7 @@
     },
     "containerSelection": {
       "containerMode": "EXPLICIT_CONTAINER",
-      "containerConf": "GPU-S-1-GPU"
+      "containerConf": "CPU-XL-2-cpu-16Gb-Ram"
     },
     "skipPrerunValidate": false
   },
