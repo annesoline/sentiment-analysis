@@ -10,7 +10,6 @@ from dataiku import pandasutils as pdu
 import pandas as pd
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-# Example: load a DSS dataset as a Pandas dataframe
 cleaned_tweets_encryption = dataiku.Dataset("cleaned_tweets_encryption")
 cleaned_tweets_encryption_df = cleaned_tweets_encryption.get_dataframe()
 
