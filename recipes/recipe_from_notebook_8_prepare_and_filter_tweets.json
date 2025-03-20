@@ -18,7 +18,20 @@
   "hashPropagationBehavior": "INHERIT",
   "variables": {},
   "dkuProperties": [],
-  "inputs": {},
+  "inputs": {
+    "main": {
+      "items": [
+        {
+          "ref": "cleaned_tweets_encryption",
+          "deps": []
+        },
+        {
+          "ref": "cleaned_tweets_removal",
+          "deps": []
+        }
+      ]
+    }
+  },
   "outputs": {
     "main": {
       "items": [
