@@ -75,22 +75,6 @@ def process_emails_and_ip(row):
 # Apply the encryption function to the dataframe
 df = df.apply(process_emails_and_ip, axis=1)
 
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-# Print the text of rows where email_present is not None and ip_present is not None
-email_and_ip_present_rows = df[df['email_present'].notnull()| df['ip_present'].notnull()]
-for index, row in email_and_ip_present_rows.iterrows():
-    print(row['encrypted_text'])
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-# Print text without sensitive data for a maximum of 5 rows where it's different from the original text
-count = 0
-for index, row in df.iterrows():
-    if row['text'] != row['text_without_sensitive_data'] and row['text_without_sensitive_data'] != '' :
-        print(row['text_without_sensitive_data'])
-        count += 1
-        if count >= 5:
-            break
-
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
 # ## 7.2. Retrait des stopwords et des caractères spéciaux, et normalisation
 
