@@ -1,6 +1,0 @@
-{
-  "task": "SENTIMENT_ANALYSIS",
-  "outputMode": "FIRST",
-  "llmId": "openai:OpenAI:gpt-4o",
-  "inputColumn": "text"
-}
