@@ -219,6 +219,7 @@
   },
   "name": "EDF Sentiment Analysis",
   "projectStatus": "Sandbox",
+  "imgPattern": 5,
   "metrics": {
     "probes": [],
     "engineConfig": {
@@ -287,34 +288,34 @@
   "checklists": {
     "checklists": [
       {
-        "title": "Your new project\u0027s Todo",
+        "title": "Rémi: Flow Optimization",
         "createdOn": 0,
         "items": [
           {
-            "done": true,
-            "text": "Create the project",
-            "createdOn": 1741861087835,
+            "done": false,
+            "text": "Modify the filter recipe compute_imported_tweets_filtered (see message attached to it)",
+            "createdOn": 1742564405038,
             "createdBy": "anne-soline.guilbert-ly@dataiku.com",
             "stateChangedOn": 0
           },
           {
             "done": false,
-            "text": "Set a project image (click on the color next to the project title)",
-            "createdOn": 1741861087835,
+            "text": "Change contenerize execution for 5_data_labelling recipe to something with GPU",
+            "createdOn": 1742564541514,
             "createdBy": "anne-soline.guilbert-ly@dataiku.com",
             "stateChangedOn": 0
           },
           {
             "done": false,
-            "text": "Import your [first dataset](projects/EDFSENTIMENTANALYSIS/datasets/new/)",
-            "createdOn": 1741861087835,
+            "text": "Check my message  in the Flow",
+            "createdOn": 1742564556402,
             "createdBy": "anne-soline.guilbert-ly@dataiku.com",
             "stateChangedOn": 0
           },
           {
             "done": false,
-            "text": "Organize your work by replacing this with a real todo",
-            "createdOn": 1741861087835,
+            "text": "Create some Flow Zones to organize the pipeline",
+            "createdOn": 1742564563438,
             "createdBy": "anne-soline.guilbert-ly@dataiku.com",
             "stateChangedOn": 0
           }
