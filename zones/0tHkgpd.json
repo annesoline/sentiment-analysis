@@ -3,7 +3,15 @@
   "color": "#087ABF",
   "items": [
     {
+      "objectId": "compute_imported_tweets_filtered",
+      "objectType": "RECIPE"
+    },
+    {
       "objectId": "imported_tweets",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "imported_tweets_filtered",
       "objectType": "DATASET"
     },
     {

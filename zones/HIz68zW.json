@@ -21,14 +21,6 @@
     {
       "objectId": "enhanced_tweets_informations",
       "objectType": "DATASET"
-    },
-    {
-      "objectId": "imported_tweets_filtered",
-      "objectType": "DATASET"
-    },
-    {
-      "objectId": "compute_imported_tweets_filtered",
-      "objectType": "RECIPE"
     }
   ],
   "shared": [],
