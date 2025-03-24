@@ -98,7 +98,7 @@
         "frequency_default_value": 0.0,
         "frequency_normalized": true,
         "name": "date",
-        "role": "INPUT",
+        "role": "REJECT",
         "type": "CATEGORY",
         "state": {
           "userModified": true,
@@ -500,7 +500,7 @@
         "useCustomVectorizer": false,
         "isStructuredRef": false,
         "name": "text",
-        "role": "INPUT",
+        "role": "REJECT",
         "type": "TEXT",
         "state": {
           "userModified": true,
