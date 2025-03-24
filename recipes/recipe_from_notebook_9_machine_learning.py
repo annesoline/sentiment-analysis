@@ -164,3 +164,48 @@ removed_metrics.write_with_schema(removed_metrics_df)
 
 removed_metrics_per_fold = dataiku.Dataset("removed_metrics_per_fold")
 removed_metrics_per_fold.write_with_schema(removed_metrics_per_fold_df)
+
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
+# # Outputs
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+artefact_name = f"lr_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}"
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+# Pipeline
+pipeline_local_path = f"{artefact_name}.pkl"
+pipeline_remote_path = f"{artefact_name}.pkl"
+remote_output_folder = dataiku.Folder("2T1uAdOy")
+
+with tempfile.TemporaryDirectory() as local_tmp_dir:
+
+    local_file_path = os.path.join(local_tmp_dir, pipeline_local_path)
+
+    with open(local_file_path, 'wb') as file:
+        pickle.dump(grid_search.best_estimator_, file)
+
+    remote_output_folder.upload_file(pipeline_remote_path, local_file_path)
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+# Training stats
+cv_results["model"] = artefact_name  # save model name
+dataiku\
+    .Dataset("lr_training_stats")\
+    .write_with_schema(cv_results[:1].drop("rank_test_score", axis=1))
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+# Artefacts
+fi_local_path = f"{artefact_name}_feature_importance.png"
+fi_remote_path = f"{artefact_name}_feature_importance.png"
+output_folder = dataiku.Folder("JPo1Lx1F")
+
+with tempfile.TemporaryDirectory() as tmp_dir_name:
+    local_file_path = os.path.join(tmp_dir_name, fi_local_path)
+    fig = ax.get_figure()
+    fig.savefig(fi_local_path)
+    output_folder.upload_file(fi_remote_path, fi_local_path)
+    plt.close(fig)
+    
+    
+    
