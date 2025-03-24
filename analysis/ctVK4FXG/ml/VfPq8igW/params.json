@@ -3943,7 +3943,7 @@
   "maxConcurrentModelTraining": 2,
   "gpuConfig": {
     "params": {
-      "useGpu": false,
+      "useGpu": true,
       "gpuList": [
         0
       ],
@@ -3957,7 +3957,8 @@
     "envName": "Deep-learning"
   },
   "containerSelection": {
-    "containerMode": "INHERIT"
+    "containerMode": "EXPLICIT_CONTAINER",
+    "containerConf": "GPU-S-1-GPU"
   },
   "sparkParams": {
     "sparkConf": {
