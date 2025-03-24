@@ -151,11 +151,14 @@ for i, report in enumerate(report_removed):
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Recipe outputs
-encrypted_metrics_df = dataiku.Dataset("encrypted_metrics_df")
+encrypted_metrics_df = dataiku.Dataset("encrypted_metrics")
 encrypted_metrics_df.write_with_schema(pandas_dataframe)
+
 encrypted_metrics_per_fold = dataiku.Dataset("encrypted_metrics_per_fold")
 encrypted_metrics_per_fold.write_with_schema(pandas_dataframe)
-removed_metrics_df = dataiku.Dataset("removed_metrics_df")
-removed_metrics_df.write_with_schema(pandas_dataframe)
+
+removed_metrics_df = dataiku.Dataset("removed_metrics")
+removed_metrics_df.write_with_schema(removed_metrics_df)
+
 removed_metrics_per_fold = dataiku.Dataset("removed_metrics_per_fold")
 removed_metrics_per_fold.write_with_schema(pandas_dataframe)
