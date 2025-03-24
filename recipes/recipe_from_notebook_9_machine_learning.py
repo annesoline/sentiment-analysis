@@ -102,7 +102,7 @@ if accuracy_encrypted is not None:
     print(encrypted_metrics_df)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-encrypted_metrics_per_fold = pd.DataFrame()
+encrypted_metrics_per_fold_df = pd.DataFrame()
 
 for i, report in enumerate(report_encrypted):
     if isinstance(report, dict):
@@ -114,7 +114,7 @@ for i, report in enumerate(report_encrypted):
         report_df = pd.DataFrame.from_dict(report).transpose()
         report_df['class'] = report_df.index  # Save the key of each dictionary into a new column called "class"
         report_df['Fold'] = i + 1  # Add the fold number to the DataFrame
-        encrypted_metrics_per_fold = pd.concat([encrypted_metrics_per_fold, report_df], ignore_index=True)
+        encrypted_metrics_per_fold_df = pd.concat([encrypted_metrics_per_fold_df, report_df], ignore_index=True)
     else:
         print(f"Warning: Report for Fold {i+1} is not a dictionary and cannot be converted to a DataFrame.")
 
