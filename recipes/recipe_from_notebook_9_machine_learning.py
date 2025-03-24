@@ -133,7 +133,7 @@ if accuracy_removed is not None:
     print(removed_metrics_df)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-removed_metrics_per_fold = pd.DataFrame()
+removed_metrics_per_fold_df = pd.DataFrame()
 
 for i, report in enumerate(report_removed):
     if isinstance(report, dict):
@@ -145,7 +145,7 @@ for i, report in enumerate(report_removed):
         report_df = pd.DataFrame.from_dict(report).transpose()
         report_df['class'] = report_df.index  # Save the key of each dictionary into a new column called "class"
         report_df['Fold'] = i + 1  # Add the fold number to the DataFrame
-        removed_metrics_per_fold = pd.concat([removed_metrics_per_fold, report_df], ignore_index=True)
+        removed_metrics_per_fold_df = pd.concat([removed_metrics_per_fold_df, report_df], ignore_index=True)
     else:
         print(f"Warning: Report for Fold {i+1} is not a dictionary and cannot be converted to a DataFrame.")
 
@@ -161,4 +161,4 @@ removed_metrics = dataiku.Dataset("removed_metrics")
 removed_metrics.write_with_schema(removed_metrics_df)
 
 removed_metrics_per_fold = dataiku.Dataset("removed_metrics_per_fold")
-removed_metrics_per_fold.write_with_schema(pandas_dataframe)
+removed_metrics_per_fold.write_with_schema(removed_metrics_per_fold_df)
