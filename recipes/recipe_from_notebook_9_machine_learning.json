@@ -31,7 +31,7 @@
           "appendMode": false
         },
         {
-          "ref": "removed_metrics_df",
+          "ref": "removed_metrics",
           "appendMode": false
         },
         {
