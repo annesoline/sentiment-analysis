@@ -25,6 +25,10 @@
     {
       "objectId": "tweets_removal_train",
       "objectType": "DATASET"
+    },
+    {
+      "objectId": "zdw6Lwnn",
+      "objectType": "MANAGED_FOLDER"
     }
   ],
   "shared": [],
