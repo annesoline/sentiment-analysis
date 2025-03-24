@@ -165,6 +165,40 @@ removed_metrics.write_with_schema(removed_metrics_df)
 removed_metrics_per_fold = dataiku.Dataset("removed_metrics_per_fold")
 removed_metrics_per_fold.write_with_schema(removed_metrics_per_fold_df)
 
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+# Parameter grid for GridSearchCV
+param_grid = {
+    'lr__alpha': [0.01, 0.1, 1, 10],
+    'lr__l1_ratio': [0, 0.4, 0.8, 1]
+}
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+# GridSearchCV
+grid_search = GridSearchCV(pipeline,
+                           param_grid,
+                           cv=5,
+                           scoring='neg_mean_squared_error',
+                           verbose=1)
+grid_search.fit(X_train, y_train);
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+# Format results
+cv_results = pd.DataFrame(grid_search.cv_results_)
+
+# select columns
+selected_cols = ["mean_fit_time"] + [c for c in cv_results if "param_" in c or "_test_score" in c]
+selected_cols.remove("std_test_score")
+cv_results = cv_results[selected_cols]
+
+# rank experiments
+cv_results = cv_results.sort_values("rank_test_score")
+
+# pretty rf params
+cv_results = cv_results.rename({"param_lr__alpha": "alpha",
+                                "param_lr__l1_ratio": "l1_ratio"},
+                                axis=1)
+cv_results["date"] = datetime.now().date()
+cv_results
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
 # # Outputs
