@@ -75,31 +75,39 @@
     ],
     "per_feature": {
       "date": {
-        "text_handling": "CUSTOM",
-        "minRowsRatio": 0.001,
-        "maxRowsRatio": 0.8,
-        "maxWords": 0,
-        "ngramMinSize": 1,
-        "ngramMaxSize": 1,
-        "hashSize": 200000,
-        "hashSVDSVDLimit": 50000,
-        "hashSVDSVDComponents": 100,
-        "stopWordsMode": "NONE",
-        "maxSequenceLength": 128,
-        "sentenceEmbeddingBatchSize": 32,
-        "useCustomVectorizer": false,
-        "isStructuredRef": false,
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "nb_bins_hashing": 1048576,
+        "hash_whole_categories": true,
+        "dummy_drop": "AUTO",
+        "impact_method": "M_ESTIMATOR",
+        "impact_m": 10,
+        "impact_kfold": true,
+        "impact_kfold_k": 5,
+        "impact_kfold_seed": 1337,
+        "ordinal_order": "COUNT",
+        "ordinal_ascending": false,
+        "ordinal_default_mode": "HIGHEST",
+        "ordinal_default_value": 0,
+        "frequency_default_mode": "EXPLICIT",
+        "frequency_default_value": 0.0,
+        "frequency_normalized": true,
         "name": "date",
         "role": "INPUT",
-        "type": "TEXT",
+        "type": "CATEGORY",
         "state": {
-          "userModified": false,
+          "userModified": true,
           "autoModifiedByDSS": false,
           "recordedMeaning": "FreeText"
         },
         "customHandlingCode": "from dataiku.doctor.deep_learning.preprocessing import TokenizerProcessor\n\n# Defines a processor that tokenizes a text. It computes a vocabulary on all the corpus.\n# Then, each text is converted to a vector representing the sequence of words, where each \n# element represents the index of the corresponding word in the vocabulary. The result is \n# padded with 0 up to the `max_len` in order for all the vectors to have the same length.\n\n#   num_words  - maximum number of words in the vocabulary\n#   max_len    - length of each sequence. If the text is longer,\n#                it will be truncated, and if it is shorter, it will be padded\n#                with 0.\nprocessor \u003d TokenizerProcessor(num_words\u003d10000, max_len\u003d32)",
         "customProcessorWantsMatrix": false,
-        "sendToInput": "date_preprocessed"
+        "sendToInput": "main"
       },
       "tweet_length_words": {
         "generate_derivative": false,
@@ -385,7 +393,7 @@
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
         "datetime_cyclical_periods": [],
-        "role": "INPUT",
+        "role": "REJECT",
         "type": "NUMERIC",
         "state": {
           "userModified": false,
@@ -444,7 +452,7 @@
         "frequency_default_mode": "EXPLICIT",
         "frequency_default_value": 0.0,
         "frequency_normalized": true,
-        "role": "INPUT",
+        "role": "REJECT",
         "type": "CATEGORY",
         "state": {
           "userModified": false,
@@ -477,7 +485,7 @@
         "sendToInput": "main"
       },
       "text": {
-        "text_handling": "CUSTOM",
+        "text_handling": "TOKENIZE_TFIDF",
         "minRowsRatio": 0.001,
         "maxRowsRatio": 0.8,
         "maxWords": 0,
@@ -495,13 +503,13 @@
         "role": "INPUT",
         "type": "TEXT",
         "state": {
-          "userModified": false,
+          "userModified": true,
           "autoModifiedByDSS": false,
           "recordedMeaning": "FreeText"
         },
         "customHandlingCode": "from dataiku.doctor.deep_learning.preprocessing import TokenizerProcessor\n\n# Defines a processor that tokenizes a text. It computes a vocabulary on all the corpus.\n# Then, each text is converted to a vector representing the sequence of words, where each \n# element represents the index of the corresponding word in the vocabulary. The result is \n# padded with 0 up to the `max_len` in order for all the vectors to have the same length.\n\n#   num_words  - maximum number of words in the vocabulary\n#   max_len    - length of each sequence. If the text is longer,\n#                it will be truncated, and if it is shorter, it will be padded\n#                with 0.\nprocessor \u003d TokenizerProcessor(num_words\u003d10000, max_len\u003d32)",
         "customProcessorWantsMatrix": false,
-        "sendToInput": "text_preprocessed"
+        "sendToInput": "main"
       },
       "is_duplicated": {
         "generate_derivative": false,
@@ -526,14 +534,18 @@
       },
       "too_many_numbers": {
         "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEDIAN",
         "impute_constant_value": 0.0,
         "keep_regular": false,
+        "rescaling": "AVGSTD",
         "monotonic": "NONE",
         "quantile_bin_nb_bins": 4,
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
         "datetime_cyclical_periods": [],
-        "role": "REJECT",
+        "role": "INPUT",
         "type": "NUMERIC",
         "state": {
           "userModified": false,
@@ -2643,9 +2655,7 @@
       "advancedFitMode": false,
       "enabled": true,
       "kerasInputs": [
-        "main",
-        "date_preprocessed",
-        "text_preprocessed"
+        "main"
       ],
       "buildCode": "from keras.layers import Input, Dense, Embedding, Flatten, concatenate\nfrom keras.models import Model\n\n# Define the keras architecture of your model in \u0027build_model\u0027 and return it. Compilation must be done in \u0027compile_model\u0027.\n#   input_shapes  - dictionary of shapes per input as defined in features handling\n#   n_classes - For classification, number of target classes\ndef build_model(input_shapes, n_classes\u003dNone):\n\n    # This input will receive all the preprocessed features\n    # sent to \u0027main\u0027\n    input_main \u003d Input(shape\u003dinput_shapes[\"main\"], name\u003d\"main\")\n\n    # This input will receive preprocessed text from \u0027date\u0027 column\n    input_date_preprocessed \u003d Input(shape\u003d(32,), name\u003d\"date_preprocessed\")\n    x_date_preprocessed \u003d Embedding(output_dim\u003d512, input_dim\u003d10000, input_length\u003d32)(input_date_preprocessed)\n    x_date_preprocessed \u003d Flatten()(x_date_preprocessed)\n\n    # This input will receive preprocessed text from \u0027text\u0027 column\n    input_text_preprocessed \u003d Input(shape\u003d(32,), name\u003d\"text_preprocessed\")\n    x_text_preprocessed \u003d Embedding(output_dim\u003d512, input_dim\u003d10000, input_length\u003d32)(input_text_preprocessed)\n    x_text_preprocessed \u003d Flatten()(x_text_preprocessed)\n\n    x \u003d concatenate([input_main, x_date_preprocessed, x_text_preprocessed])\n\n    x \u003d Dense(64, activation\u003d\u0027relu\u0027)(x)\n    x \u003d Dense(64, activation\u003d\u0027relu\u0027)(x)\n\n    predictions \u003d Dense(n_classes, activation\u003d\u0027softmax\u0027)(x)\n\n    # The \u0027inputs\u0027 parameter of your model must contain the\n    # full list of inputs used in the architecture\n    model \u003d Model(inputs\u003d[input_main, input_date_preprocessed, input_text_preprocessed], outputs\u003dpredictions)\n\n    return model\n\n# Compile your model and return it\n#   model   - model defined in \u0027build_model\u0027\ndef compile_model(model):\n    \n    # The loss function depends on the type of problem you solve.\n    # \u0027categorical_crossentropy\u0027 is appropriate for a multiclass classification.\n    model.compile(optimizer\u003d\u0027rmsprop\u0027,\n                  loss\u003d\u0027categorical_crossentropy\u0027)\n\n    return model"
     },
