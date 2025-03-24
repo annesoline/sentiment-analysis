@@ -1,7 +1,20 @@
 {
   "name": "import_data",
   "color": "#087ABF",
-  "items": [],
+  "items": [
+    {
+      "objectId": "imported_tweets",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "2_import_data_from_internet",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "0io1NZR3",
+      "objectType": "MANAGED_FOLDER"
+    }
+  ],
   "shared": [],
   "position": {},
   "tags": [],
