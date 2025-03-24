@@ -1,7 +1,36 @@
 {
   "name": "data_analysis",
   "color": "#C54F00",
-  "items": [],
+  "items": [
+    {
+      "objectId": "unreadable_tweets",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "high_percentage_numbers_tweets",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "very_short_tweets",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "3_quality_analysis_textual_data",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "enhanced_tweets_informations",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "imported_tweets_filtered",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_imported_tweets_filtered",
+      "objectType": "RECIPE"
+    }
+  ],
   "shared": [],
   "position": {},
   "tags": [],
