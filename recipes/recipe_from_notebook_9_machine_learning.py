@@ -7,6 +7,9 @@ import pandas as pd
 prepared_tweets_encryption = dataiku.Dataset("prepared_tweets_encryption")
 prepared_tweets_encryption_df = prepared_tweets_encryption.get_dataframe()
 
+prepared_tweets_removal = dataiku.Dataset("prepared_tweets_removal")
+prepared_tweets_removal_df = prepared_tweets_removal.get_dataframe()
+
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report, roc_auc_score
