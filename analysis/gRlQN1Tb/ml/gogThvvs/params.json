@@ -76,7 +76,7 @@
     "per_feature": {
       "date": {
         "category_handling": "DUMMIFY",
-        "missing_handling": "IMPUTE",
+        "missing_handling": "NONE",
         "missing_impute_with": "MODE",
         "dummy_clip": "CUMULATIVE_PROPORTION",
         "cumulative_proportion": 0.95,
