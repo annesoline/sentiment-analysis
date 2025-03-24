@@ -3,14 +3,14 @@
   "centileSplits": [
     {
       "outputIndex": 0,
-      "share": 50.0
+      "share": 50
     }
   ],
-  "defaultOutputIndex": 1,
   "preFilter": {
     "distinct": false,
     "enabled": false
   },
+  "defaultOutputIndex": 1,
   "seed": 1337,
   "randomColumns": [],
   "centileOrders": [],
@@ -18,13 +18,13 @@
   "randomSplits": [
     {
       "outputIndex": 0,
-      "share": 20.0
+      "share": 20
     }
   ],
   "randomColumnsSplits": [
     {
       "outputIndex": 0,
-      "share": 50.0
+      "share": 50
     }
   ],
   "computedColumns": [],
@@ -94,6 +94,84 @@
         "uiData": {
           "mode": "\u0026\u0026",
           "conditions": []
+        },
+        "$status": {
+          "schema": {
+            "columns": [
+              {
+                "name": "label",
+                "type": "string"
+              },
+              {
+                "name": "target",
+                "type": "bigint"
+              },
+              {
+                "name": "id",
+                "type": "bigint"
+              },
+              {
+                "name": "date",
+                "type": "string"
+              },
+              {
+                "name": "flag",
+                "type": "string"
+              },
+              {
+                "name": "user",
+                "type": "string"
+              },
+              {
+                "name": "is_duplicated",
+                "type": "bigint"
+              },
+              {
+                "name": "tweet_length_chars",
+                "type": "bigint"
+              },
+              {
+                "name": "tweet_length_words",
+                "type": "bigint"
+              },
+              {
+                "name": "repetitive_letters",
+                "type": "bigint"
+              },
+              {
+                "name": "mention_only",
+                "type": "bigint"
+              },
+              {
+                "name": "unreadable",
+                "type": "bigint"
+              },
+              {
+                "name": "too_many_numbers",
+                "type": "bigint"
+              },
+              {
+                "name": "language",
+                "type": "string"
+              },
+              {
+                "name": "NER",
+                "type": "string"
+              },
+              {
+                "name": "email_present",
+                "type": "string"
+              },
+              {
+                "name": "ip_present",
+                "type": "string"
+              },
+              {
+                "name": "text",
+                "type": "string"
+              }
+            ]
+          }
         },
         "distinct": false,
         "enabled": true
