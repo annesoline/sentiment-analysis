@@ -299,7 +299,7 @@
             "stateChangedOn": 0
           },
           {
-            "done": false,
+            "done": true,
             "text": "Change contenerize execution for 5_data_labelling recipe to something with GPU",
             "createdOn": 1742564541514,
             "createdBy": "anne-soline.guilbert-ly@dataiku.com",
