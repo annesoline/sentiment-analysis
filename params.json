@@ -306,14 +306,14 @@
             "stateChangedOn": 0
           },
           {
-            "done": false,
+            "done": true,
             "text": "Check my message  in the Flow",
             "createdOn": 1742564556402,
             "createdBy": "anne-soline.guilbert-ly@dataiku.com",
             "stateChangedOn": 0
           },
           {
-            "done": false,
+            "done": true,
             "text": "Create some Flow Zones to organize the pipeline",
             "createdOn": 1742564563438,
             "createdBy": "anne-soline.guilbert-ly@dataiku.com",
