@@ -33,6 +33,10 @@
     {
       "objectId": "recipe_from_notebook_8_prepare_and_filter_tweets",
       "objectType": "RECIPE"
+    },
+    {
+      "objectId": "2T1uAdOy",
+      "objectType": "MANAGED_FOLDER"
     }
   ],
   "shared": [],
