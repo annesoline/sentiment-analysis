@@ -89,7 +89,7 @@ def apply_and_evaluate_model_with_tfidf_stratified_kfold(df, label_col='label', 
     return np.mean(accuracies), reports, np.mean([auc for auc in roc_aucs if auc is not None])
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
-# # Apply to prepared_tweets_encryption
+# # Apply to prepared_tweets_encryption_df
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Apply the function to each DataFrame
