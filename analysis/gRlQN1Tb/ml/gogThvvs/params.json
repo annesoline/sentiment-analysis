@@ -3868,7 +3868,7 @@
       "seed": 1337
     },
     "ssdTrainingRatio": 0.8,
-    "ssdStratified": false,
+    "ssdStratified": true,
     "ssdGrouped": false,
     "ssdSeed": 1337,
     "testOnLargerValues": true,
