@@ -4,7 +4,6 @@ from dataiku import pandasutils as pdu
 import pandas as pd
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-# Example: load a DSS dataset as a Pandas dataframe
 prepared_tweets_encryption = dataiku.Dataset("prepared_tweets_encryption")
 prepared_tweets_encryption_df = prepared_tweets_encryption.get_dataframe()
 
