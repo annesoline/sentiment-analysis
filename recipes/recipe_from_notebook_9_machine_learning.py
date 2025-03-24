@@ -6,7 +6,7 @@ import pandas as pd
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Example: load a DSS dataset as a Pandas dataframe
 prepared_tweets_encryption = dataiku.Dataset("prepared_tweets_encryption")
-df = prepared_tweets_encryption.get_dataframe()
+prepared_tweets_encryption_df = prepared_tweets_encryption.get_dataframe()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 from sklearn.linear_model import LogisticRegression
@@ -91,7 +91,7 @@ def apply_and_evaluate_model_with_tfidf_stratified_kfold(df, label_col='label', 
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Apply the function to each DataFrame
-accuracy_encrypted, report_encrypted, roc_auc_encrypted = apply_and_evaluate_model_with_tfidf_stratified_kfold(prepared_tweets_encryption)
+accuracy_encrypted, report_encrypted, roc_auc_encrypted = apply_and_evaluate_model_with_tfidf_stratified_kfold(prepared_tweets_encryption_df)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 if accuracy_encrypted is not None:
