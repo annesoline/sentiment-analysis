@@ -292,7 +292,7 @@
         "createdOn": 0,
         "items": [
           {
-            "done": false,
+            "done": true,
             "text": "Modify the filter recipe compute_imported_tweets_filtered (see message attached to it)",
             "createdOn": 1742564405038,
             "createdBy": "anne-soline.guilbert-ly@dataiku.com",
