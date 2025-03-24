@@ -66,8 +66,15 @@
     }
   },
   "schema": {
-    "columns": [],
-    "userModified": true
+    "columns": [
+      {"name":"precision","type":"double"},
+      {"name":"recall","type":"double"},
+      {"name":"f1-score","type":"double"},
+      {"name":"support","type":"double"},
+      {"name":"class","type":"string"},
+      {"name":"Fold","type":"bigint"}
+    ],
+    "userModified": false
   },
   "typeSystemVersion": "V2",
   "dkuProperties": [],
