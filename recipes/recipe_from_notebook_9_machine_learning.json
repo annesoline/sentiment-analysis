@@ -23,7 +23,7 @@
     "main": {
       "items": [
         {
-          "ref": "encrypted_metrics_df",
+          "ref": "encrypted_metrics",
           "appendMode": false
         },
         {
