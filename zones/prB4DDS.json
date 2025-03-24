@@ -1,7 +1,44 @@
 {
   "name": "deep_learning",
   "color": "#4B8021",
-  "items": [],
+  "items": [
+    {
+      "objectId": "cleaned_tweets_encryption",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "cleaned_tweets_removal",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "split_cleaned_tweets_encryption",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "split_cleaned_tweets_encryption_1",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "tweets_encryption_test",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "tweets_encryption_train",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "tweets_removal_test",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "tweets_removal_train",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "recipe_from_notebook_7_cleaning_data",
+      "objectType": "RECIPE"
+    }
+  ],
   "shared": [],
   "position": {},
   "tags": [],
