@@ -121,10 +121,10 @@ for i, report in enumerate(report_encrypted):
         print(f"Warning: Report for Fold {i+1} is not a dictionary and cannot be converted to a DataFrame.")
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
-# # Apply to prepared_tweets_removal
+# # Apply to prepared_tweets_removal_df
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-accuracy_removed, report_removed, roc_auc_removed = apply_and_evaluate_model_with_tfidf_stratified_kfold(prepared_tweets_removal)
+accuracy_removed, report_removed, roc_auc_removed = apply_and_evaluate_model_with_tfidf_stratified_kfold(prepared_tweets_removal_df)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 if accuracy_removed is not None:
