@@ -119,7 +119,7 @@ def apply_and_evaluate_model_with_tfidf_stratified_kfold(df: pd.DataFrame, label
     return np.mean(accuracies), reports, np.mean([auc for auc in roc_aucs if auc is not None]), model, feature_importance_plot
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
-# # Train and evaluate prepared_tweets_encryption_df
+# # Train and evaluate tweets_encryption_train_df
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 accuracy_encrypted, report_encrypted, roc_auc_encrypted, model_encrypted_data, feature_importance_plot_encrypted = apply_and_evaluate_model_with_tfidf_stratified_kfold(tweets_encryption_train_df)
