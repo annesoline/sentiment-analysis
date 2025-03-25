@@ -3,30 +3,6 @@
   "color": "#4B8021",
   "items": [
     {
-      "objectId": "split_cleaned_tweets_encryption",
-      "objectType": "RECIPE"
-    },
-    {
-      "objectId": "split_cleaned_tweets_encryption_1",
-      "objectType": "RECIPE"
-    },
-    {
-      "objectId": "tweets_encryption_test",
-      "objectType": "DATASET"
-    },
-    {
-      "objectId": "tweets_encryption_train",
-      "objectType": "DATASET"
-    },
-    {
-      "objectId": "tweets_removal_test",
-      "objectType": "DATASET"
-    },
-    {
-      "objectId": "tweets_removal_train",
-      "objectType": "DATASET"
-    },
-    {
       "objectId": "zdw6Lwnn",
       "objectType": "MANAGED_FOLDER"
     }
