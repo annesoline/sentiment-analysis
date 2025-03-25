@@ -13,7 +13,7 @@
     "main": {
       "items": [
         {
-          "ref": "cleaned_tweets_removal",
+          "ref": "prepared_tweets_removal",
           "deps": []
         }
       ]
