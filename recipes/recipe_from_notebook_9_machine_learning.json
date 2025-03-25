@@ -22,11 +22,11 @@
     "main": {
       "items": [
         {
-          "ref": "prepared_tweets_encryption",
+          "ref": "prepared_tweets_removal",
           "deps": []
         },
         {
-          "ref": "prepared_tweets_removal",
+          "ref": "tweets_encryption_train",
           "deps": []
         }
       ]
