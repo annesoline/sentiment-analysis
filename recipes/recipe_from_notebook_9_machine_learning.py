@@ -8,8 +8,8 @@ from datetime import datetime
 tweets_encryption_train = dataiku.Dataset("tweets_encryption_train")
 tweets_encryption_train_df = tweets_encryption_train.get_dataframe()
 
-prepared_tweets_removal = dataiku.Dataset("prepared_tweets_removal")
-prepared_tweets_removal_df = prepared_tweets_removal.get_dataframe()
+tweets_removal_train = dataiku.Dataset("tweets_removal_train")
+tweets_removal_train_df = tweets_removal_train.get_dataframe()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 from sklearn.linear_model import LogisticRegression
@@ -188,10 +188,10 @@ with tempfile.TemporaryDirectory() as tmp_dir_name_encrypted:
     plt.close(fig)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
-# # Train and evaluate to prepared_tweets_removal_df
+# # Train and evaluate to tweets_removal_train_df
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-accuracy_removed, report_removed, roc_auc_removed, model_removed_data, feature_importance_plot_removed = apply_and_evaluate_model_with_tfidf_stratified_kfold(prepared_tweets_removal_df)
+accuracy_removed, report_removed, roc_auc_removed, model_removed_data, feature_importance_plot_removed = apply_and_evaluate_model_with_tfidf_stratified_kfold(tweets_removal_train_df)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 if accuracy_removed is not None:
