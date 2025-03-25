@@ -5,8 +5,8 @@ import pandas as pd
 from datetime import datetime
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-prepared_tweets_encryption = dataiku.Dataset("prepared_tweets_encryption")
-prepared_tweets_encryption_df = prepared_tweets_encryption.get_dataframe()
+tweets_encryption_train = dataiku.Dataset("tweets_encryption_train")
+tweets_encryption_train_df = tweets_encryption_train.get_dataframe()
 
 prepared_tweets_removal = dataiku.Dataset("prepared_tweets_removal")
 prepared_tweets_removal_df = prepared_tweets_removal.get_dataframe()
@@ -122,7 +122,7 @@ def apply_and_evaluate_model_with_tfidf_stratified_kfold(df: pd.DataFrame, label
 # # Train and evaluate prepared_tweets_encryption_df
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-accuracy_encrypted, report_encrypted, roc_auc_encrypted, model_encrypted_data, feature_importance_plot_encrypted = apply_and_evaluate_model_with_tfidf_stratified_kfold(prepared_tweets_encryption_df)
+accuracy_encrypted, report_encrypted, roc_auc_encrypted, model_encrypted_data, feature_importance_plot_encrypted = apply_and_evaluate_model_with_tfidf_stratified_kfold(tweets_encryption_train_df)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 if accuracy_encrypted is not None:
