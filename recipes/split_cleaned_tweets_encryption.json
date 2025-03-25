@@ -13,7 +13,7 @@
     "main": {
       "items": [
         {
-          "ref": "cleaned_tweets_encryption",
+          "ref": "prepared_tweets_encryption",
           "deps": []
         }
       ]
