@@ -3,14 +3,6 @@
   "color": "#4B8021",
   "items": [
     {
-      "objectId": "prepared_tweets_encryption",
-      "objectType": "DATASET"
-    },
-    {
-      "objectId": "prepared_tweets_removal",
-      "objectType": "DATASET"
-    },
-    {
       "objectId": "recipe_from_notebook_9_machine_learning",
       "objectType": "RECIPE"
     },
@@ -29,10 +21,6 @@
     {
       "objectId": "removed_metrics_per_fold",
       "objectType": "DATASET"
-    },
-    {
-      "objectId": "recipe_from_notebook_8_prepare_and_filter_tweets",
-      "objectType": "RECIPE"
     },
     {
       "objectId": "2T1uAdOy",
