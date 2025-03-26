@@ -49,14 +49,14 @@ df = df.apply(process_NER, axis=1)
 # Encrypt emails and IPs if present, otherwise fill with original text
 def process_emails_and_ip(row):
     if pd.notnull(row['email_present']):
-        # Encrypt email in encrypted_text column
-        row['encrypted_text'] = re.sub(row['email_present'], 
-                             lambda match: encrypt_text(match.group()), row['encrypted_text'])
+        # Encrypt email in text column
+        row['text'] = re.sub(row['email_present'], 
+                             lambda match: encrypt_text(match.group()), row['text'])
 
     if pd.notnull(row['ip_present']):
         # Encrypt IP in encrypted_text column
-        row['encrypted_text'] = re.sub(row['ip_present'], 
-                             lambda match: encrypt_text(match.group()), row['encrypted_text'])
+        row['text'] = re.sub(row['ip_present'], 
+                             lambda match: encrypt_text(match.group()), row['text'])
             
     return row
 
