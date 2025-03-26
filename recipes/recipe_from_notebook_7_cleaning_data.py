@@ -34,7 +34,7 @@ def process_NER(row):
     if ner_list:
         for entity in ner_list:
             word = entity['word']
-            # Encrypt and replace the word with its encrypted version in encrypted_text
+            # Encrypt and replace the word with its encrypted version in text
             row['text'] = re.sub(r'\b' + re.escape(word) + r'\b', encrypt_text(word), row['text'])
 
     return row
