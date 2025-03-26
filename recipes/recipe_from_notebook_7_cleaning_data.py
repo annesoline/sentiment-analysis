@@ -223,7 +223,6 @@ def remove_special_characters(text):
 
 # Apply the function to the 'text' column
 df['text'] = df['text'].apply(remove_special_characters)
-df['encrypted_text'] = df['encrypted_text'].apply(remove_special_characters)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Normalize the text
