@@ -34,10 +34,6 @@
         {
           "ref": "cleaned_tweets_encryption",
           "appendMode": false
-        },
-        {
-          "ref": "cleaned_tweets_removal",
-          "appendMode": false
         }
       ]
     }
