@@ -194,9 +194,3 @@ encrypted_metrics.write_with_schema(encrypted_metrics_df)
 
 encrypted_metrics_per_fold = dataiku.Dataset("encrypted_metrics_per_fold")
 encrypted_metrics_per_fold.write_with_schema(encrypted_metrics_per_fold_df)
-
-removed_metrics = dataiku.Dataset("removed_metrics")
-removed_metrics.write_with_schema(removed_metrics_df)
-
-removed_metrics_per_fold = dataiku.Dataset("removed_metrics_per_fold")
-removed_metrics_per_fold.write_with_schema(removed_metrics_per_fold_df)
