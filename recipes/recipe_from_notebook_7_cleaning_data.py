@@ -237,12 +237,8 @@ df['encrypted_text'] = df['encrypted_text'].str.lower()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Create one dataframe with encrypted sensitive data
-cleaned_tweets_encryption_df = df.drop(columns=['text', 'text_without_sensitive_data'], errors='ignore')
+cleaned_tweets_encryption_df = df.drop(columns=['text'], errors='ignore')
 cleaned_tweets_encryption_df = cleaned_tweets_encryption_df.rename(columns={'encrypted_text': 'text'})
-
-# Create one dataframe with removed sensitive data
-cleaned_tweets_removal_df = df.drop(columns=['text', 'encrypted_text'])
-cleaned_tweets_removal_df = cleaned_tweets_removal_df.rename(columns={'text_without_sensitive_data': 'text'})
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Recipe outputs
