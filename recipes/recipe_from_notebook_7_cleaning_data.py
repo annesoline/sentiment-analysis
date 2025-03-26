@@ -229,11 +229,6 @@ df['text'] = df['text'].apply(remove_special_characters)
 df['text'] = df['text'].str.lower()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-# Create one dataframe with encrypted sensitive data
-cleaned_tweets_encryption_df = df.drop(columns=['text'], errors='ignore')
-cleaned_tweets_encryption_df = cleaned_tweets_encryption_df.rename(columns={'encrypted_text': 'text'})
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Recipe outputs
 cleaned_tweets_encryption = dataiku.Dataset("cleaned_tweets_encryption")
 cleaned_tweets_encryption.write_with_schema(cleaned_tweets_encryption_df)
