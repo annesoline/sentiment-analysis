@@ -3,6 +3,10 @@
   "color": "#4B8021",
   "items": [
     {
+      "objectId": "recipe_from_notebook_9_machine_learning",
+      "objectType": "RECIPE"
+    },
+    {
       "objectId": "encrypted_metrics",
       "objectType": "DATASET"
     },
@@ -11,11 +15,27 @@
       "objectType": "DATASET"
     },
     {
+      "objectId": "removed_metrics",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "removed_metrics_per_fold",
+      "objectType": "DATASET"
+    },
+    {
       "objectId": "2T1uAdOy",
       "objectType": "MANAGED_FOLDER"
     },
     {
       "objectId": "VQ6fLov2",
+      "objectType": "MANAGED_FOLDER"
+    },
+    {
+      "objectId": "mc75BlAL",
+      "objectType": "MANAGED_FOLDER"
+    },
+    {
+      "objectId": "A7JQo8rN",
       "objectType": "MANAGED_FOLDER"
     }
   ],
