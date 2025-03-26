@@ -8,9 +8,6 @@ from datetime import datetime
 tweets_encryption_train = dataiku.Dataset("tweets_encryption_train")
 tweets_encryption_train_df = tweets_encryption_train.get_dataframe()
 
-tweets_removal_train = dataiku.Dataset("tweets_removal_train")
-tweets_removal_train_df = tweets_removal_train.get_dataframe()
-
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report, roc_auc_score
