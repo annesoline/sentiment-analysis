@@ -232,7 +232,6 @@ df['encrypted_text'] = df['encrypted_text'].apply(remove_special_characters)
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Normalize the text
 df['text'] = df['text'].str.lower()
-df['text_without_sensitive_data'] = df['text_without_sensitive_data'].str.lower()
 df['encrypted_text'] = df['encrypted_text'].str.lower()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
