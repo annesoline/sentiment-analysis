@@ -232,6 +232,3 @@ df['text'] = df['text'].str.lower()
 # Recipe outputs
 cleaned_tweets_encryption = dataiku.Dataset("cleaned_tweets_encryption")
 cleaned_tweets_encryption.write_with_schema(cleaned_tweets_encryption_df)
-
-cleaned_tweets_removal = dataiku.Dataset("cleaned_tweets_removal")
-cleaned_tweets_removal.write_with_schema(cleaned_tweets_removal_df)
