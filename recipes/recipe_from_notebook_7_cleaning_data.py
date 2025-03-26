@@ -19,7 +19,7 @@ df["text_without_sensitive_data"] = df["text"]
 df.head()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
-# ### Encryption et retrait des NER : création de deux datasets
+# ### Encryption des NER : création de deux datasets
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 from cryptography.fernet import Fernet
