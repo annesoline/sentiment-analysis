@@ -19,7 +19,6 @@ cleaned_tweets_encryption_df = cleaned_tweets_encryption.get_dataframe()
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Remove duplicates based on the 'is_duplicated' column
 cleaned_tweets_encryption_df = cleaned_tweets_encryption_df[cleaned_tweets_encryption_df['is_duplicated'] == 0]
-cleaned_tweets_removal_df = cleaned_tweets_removal_df[cleaned_tweets_removal_df['is_duplicated'] == 0]
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
 # ## 8.2. Stemming
@@ -36,7 +35,6 @@ def apply_stemming(text):
     return ' '.join(stemmed_words)
 
 cleaned_tweets_encryption_df['text'] = cleaned_tweets_encryption_df['text'].apply(apply_stemming)
-cleaned_tweets_removal_df['text'] = cleaned_tweets_removal_df['text'].apply(apply_stemming)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Recipe outputs
