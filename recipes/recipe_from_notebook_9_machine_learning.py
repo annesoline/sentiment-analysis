@@ -185,40 +185,6 @@ with tempfile.TemporaryDirectory() as tmp_dir_name_encrypted:
     plt.close(fig)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
-# ## Save pickle
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-# Pipeline for removed data
-pipeline_local_path_removed = f"{artefact_name_removed}.pkl"
-pipeline_remote_path_removed = f"{artefact_name_removed}.pkl"
-remote_output_folder_removed = dataiku.Folder("mc75BlAL")
-
-with tempfile.TemporaryDirectory() as local_tmp_dir_removed:
-
-    local_file_path_removed = os.path.join(local_tmp_dir_removed, pipeline_local_path_removed)
-
-    with open(local_file_path_removed, 'wb') as file:
-        pickle.dump(model_removed_data, file)
-
-    remote_output_folder_removed.upload_file(pipeline_remote_path_removed, local_file_path_removed)
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
-# ## Save artefacts
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-# Artefacts
-fi_local_path_removed = f"{artefact_name_removed}_feature_importance.png"
-fi_remote_path_removed = f"{artefact_name_removed}_feature_importance.png"
-output_folder_removed = dataiku.Folder("A7JQo8rN")
-
-with tempfile.TemporaryDirectory() as tmp_dir_name_removed:
-    local_file_path_removed = os.path.join(tmp_dir_name_removed, fi_local_path_removed)
-    fig = feature_importance_plot_removed.get_figure()
-    fig.savefig(fi_local_path_removed)
-    output_folder_removed.upload_file(fi_remote_path_removed, fi_local_path_removed)
-    plt.close(fig)
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
 # # Create output datasets
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
