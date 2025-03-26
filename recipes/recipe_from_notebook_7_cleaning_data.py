@@ -19,7 +19,7 @@ df["text_without_sensitive_data"] = df["text"]
 df.head()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
-# ### Encryption des NER
+# ### Encryption et retrait des NER : création de deux datasets
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 from cryptography.fernet import Fernet
@@ -40,8 +40,6 @@ def process_NER(row):
             word = entity['word']
             # Encrypt and replace the word with its encrypted version in encrypted_text
             row['encrypted_text'] = re.sub(r'\b' + re.escape(word) + r'\b', encrypt_text(word), row['encrypted_text'])
-            # Remove the word from text_without_entities
-            row['text_without_sensitive_data'] = re.sub(r'\b' + re.escape(word) + r'\b', '', row['text_without_sensitive_data'])
 
     return row
 
@@ -49,7 +47,7 @@ def process_NER(row):
 df = df.apply(process_NER, axis=1)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
-# ### Encryption des emails et adresses IP
+# ### Encryption et retrait des emails et adresses IP
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Encrypt emails and IPs if present, otherwise fill with original text
