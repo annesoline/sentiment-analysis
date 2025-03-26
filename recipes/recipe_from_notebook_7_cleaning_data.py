@@ -227,7 +227,6 @@ def remove_special_characters(text):
 
 # Apply the function to the 'text' column
 df['text'] = df['text'].apply(remove_special_characters)
-df['text_without_sensitive_data'] = df['text_without_sensitive_data'].apply(remove_special_characters)
 df['encrypted_text'] = df['encrypted_text'].apply(remove_special_characters)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
