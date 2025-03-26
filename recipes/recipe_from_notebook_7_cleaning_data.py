@@ -47,7 +47,7 @@ def process_NER(row):
 df = df.apply(process_NER, axis=1)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
-# ### Encryption et retrait des emails et adresses IP
+# ### Encryption des emails et adresses IP
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Encrypt emails and IPs if present, otherwise fill with original text
@@ -57,17 +57,11 @@ def process_emails_and_ip(row):
         row['encrypted_text'] = re.sub(row['email_present'], 
                              lambda match: encrypt_text(match.group()), row['encrypted_text'])
 
-        # Remove email in text_without_sensitive_data column
-        row['text_without_sensitive_data'] = row['text_without_sensitive_data'].replace(row['email_present'], '')
-
     if pd.notnull(row['ip_present']):
         # Encrypt IP in encrypted_text column
         row['encrypted_text'] = re.sub(row['ip_present'], 
                              lambda match: encrypt_text(match.group()), row['encrypted_text'])
-        
-        # Remove IP in text_without_sensitive_data column
-        row['encrypted_text'] = row['encrypted_text'].replace(row['ip_present'], '')
-    
+            
     return row
 
 # Apply the encryption function to the dataframe
