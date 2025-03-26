@@ -217,7 +217,6 @@ def remove_stopwords(text, lang):
     return ' '.join(filtered_words)
 
 # Apply the function to the 'text' column based on the 'language' column
-df['text_without_sensitive_data'] = df.apply(lambda row: remove_stopwords(row['text_without_sensitive_data'], row['language']), axis=1)
 df['encrypted_text'] = df.apply(lambda row: remove_stopwords(row['encrypted_text'], row['language']), axis=1)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
