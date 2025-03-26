@@ -24,10 +24,6 @@
         {
           "ref": "cleaned_tweets_encryption",
           "deps": []
-        },
-        {
-          "ref": "cleaned_tweets_removal",
-          "deps": []
         }
       ]
     }
