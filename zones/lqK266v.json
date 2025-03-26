@@ -11,10 +11,6 @@
       "objectType": "DATASET"
     },
     {
-      "objectId": "removed_metrics",
-      "objectType": "DATASET"
-    },
-    {
       "objectId": "removed_metrics_per_fold",
       "objectType": "DATASET"
     },
