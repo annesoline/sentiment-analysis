@@ -12,9 +12,6 @@ df = sensitive_data_identified.get_dataframe()
 # ## 7.1. Encryption des données sensibles
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-df["encrypted_text"] = df["text"]
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 df.head()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
@@ -38,7 +35,7 @@ def process_NER(row):
         for entity in ner_list:
             word = entity['word']
             # Encrypt and replace the word with its encrypted version in encrypted_text
-            row['encrypted_text'] = re.sub(r'\b' + re.escape(word) + r'\b', encrypt_text(word), row['encrypted_text'])
+            row['text'] = re.sub(r'\b' + re.escape(word) + r'\b', encrypt_text(word), row['text'])
 
     return row
 
