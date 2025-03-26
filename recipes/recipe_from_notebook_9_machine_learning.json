@@ -40,27 +40,11 @@
           "appendMode": false
         },
         {
-          "ref": "removed_metrics",
-          "appendMode": false
-        },
-        {
-          "ref": "removed_metrics_per_fold",
-          "appendMode": false
-        },
-        {
           "ref": "2T1uAdOy",
           "appendMode": false
         },
         {
-          "ref": "A7JQo8rN",
-          "appendMode": false
-        },
-        {
           "ref": "VQ6fLov2",
-          "appendMode": false
-        },
-        {
-          "ref": "mc75BlAL",
           "appendMode": false
         }
       ]
