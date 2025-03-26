@@ -3,10 +3,6 @@
   "color": "#4B8021",
   "items": [
     {
-      "objectId": "recipe_from_notebook_9_machine_learning",
-      "objectType": "RECIPE"
-    },
-    {
       "objectId": "encrypted_metrics",
       "objectType": "DATASET"
     },
