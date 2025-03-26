@@ -185,41 +185,6 @@ with tempfile.TemporaryDirectory() as tmp_dir_name_encrypted:
     plt.close(fig)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
-# # Train and evaluate to tweets_removal_train_df
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-accuracy_removed, report_removed, roc_auc_removed, model_removed_data, feature_importance_plot_removed = apply_and_evaluate_model_with_tfidf_stratified_kfold(tweets_removal_train_df)
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-if accuracy_removed is not None:
-    removed_metrics_df = pd.DataFrame({
-        'Metric': ['Average Accuracy', 'Average ROC AUC'],
-        'Value': [accuracy_removed, roc_auc_removed]
-    })
-    print(removed_metrics_df)
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-removed_metrics_per_fold_df = pd.DataFrame()
-
-for i, report in enumerate(report_removed):
-    if isinstance(report, dict):
-        # Remove 'accuracy', 'macro avg', and 'weighted avg' from the report
-        report.pop('accuracy', None)
-        report.pop('macro avg', None)
-        report.pop('weighted avg', None)
-
-        report_df = pd.DataFrame.from_dict(report).transpose()
-        report_df['class'] = report_df.index  # Save the key of each dictionary into a new column called "class"
-        report_df['Fold'] = i + 1  # Add the fold number to the DataFrame
-        removed_metrics_per_fold_df = pd.concat([removed_metrics_per_fold_df, report_df], ignore_index=True)
-    else:
-        print(f"Warning: Report for Fold {i+1} is not a dictionary and cannot be converted to a DataFrame.")
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-artefact_name_removed = f"lr_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}"
-removed_metrics_per_fold_df["model"] = artefact_name_removed
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
 # ## Save pickle
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
