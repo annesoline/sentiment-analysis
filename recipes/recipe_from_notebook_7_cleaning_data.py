@@ -13,7 +13,6 @@ df = sensitive_data_identified.get_dataframe()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 df["encrypted_text"] = df["text"]
-df["text_without_sensitive_data"] = df["text"]
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 df.head()
