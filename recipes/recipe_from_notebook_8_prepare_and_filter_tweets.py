@@ -13,9 +13,6 @@ import pandas as pd
 cleaned_tweets_encryption = dataiku.Dataset("cleaned_tweets_encryption")
 cleaned_tweets_encryption_df = cleaned_tweets_encryption.get_dataframe()
 
-cleaned_tweets_removal = dataiku.Dataset("cleaned_tweets_removal")
-cleaned_tweets_removal_df = cleaned_tweets_removal.get_dataframe()
-
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
 # ## 8.1. Retrait des duplicatas
 
