@@ -42,5 +42,3 @@ cleaned_tweets_removal_df['text'] = cleaned_tweets_removal_df['text'].apply(appl
 # Recipe outputs
 prepared_tweets_encryption = dataiku.Dataset("prepared_tweets_encryption")
 prepared_tweets_encryption.write_with_schema(cleaned_tweets_encryption_df)
-prepared_tweets_removal = dataiku.Dataset("prepared_tweets_removal")
-prepared_tweets_removal.write_with_schema(cleaned_tweets_removal_df)
