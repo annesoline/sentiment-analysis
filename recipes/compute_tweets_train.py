@@ -16,7 +16,7 @@ eval_df = prepared_tweets_df.drop(train_df.index)
 # Filter to balance the data on label column
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 print("VALUE COUNT")
-train_df['label'].value_counts()
+print(train_df['label'].value_counts())
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 min_count = train_df['label'].value_counts().min()
@@ -24,7 +24,7 @@ balanced_df = train_df.groupby('label', group_keys=False).apply(lambda x: x.samp
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 print("VALUE COUNT")
-balanced_df['label'].value_counts()
+print(balanced_df['label'].value_counts())
 
 # Write recipe outputs
 tweets_train = dataiku.Dataset("tweets_train")
