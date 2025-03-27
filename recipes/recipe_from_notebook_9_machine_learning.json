@@ -32,7 +32,7 @@
     "main": {
       "items": [
         {
-          "ref": "encrypted_metrics",
+          "ref": "lr_metrics",
           "appendMode": true
         },
         {
