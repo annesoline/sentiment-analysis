@@ -15,6 +15,7 @@ eval_df = prepared_tweets_df.drop(train_df.index)
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
 # Filter to balance the data on label column
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+print("VALUE COUNT")
 train_df['label'].value_counts()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
@@ -22,6 +23,7 @@ min_count = train_df['label'].value_counts().min()
 balanced_df = train_df.groupby('label', group_keys=False).apply(lambda x: x.sample(min(len(x), min_count))).reset_index(drop=True)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+print("VALUE COUNT")
 balanced_df['label'].value_counts()
 
 # Write recipe outputs
