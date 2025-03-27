@@ -8,9 +8,19 @@ prepared_tweets = dataiku.Dataset("prepared_tweets")
 prepared_tweets_df = prepared_tweets.get_dataframe()
 
 
-# Compute recipe outputs from inputs
-# TODO: Replace this part by your actual code that computes the output, as a Pandas dataframe
-# NB: DSS also supports other kinds of APIs for reading and writing data. Please see doc.
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
+# Filter to balance the data on label column
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+cleaned_tweets_encryption_df['label'].value_counts()
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+min_count = cleaned_tweets_encryption_df['label'].value_counts().min()
+balanced_df = cleaned_tweets_encryption_df.groupby('label', group_keys=False).apply(lambda x: x.sample(min(len(x), min_count))).reset_index(drop=True)
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+balanced_df['label'].value_counts()
+
 
 tweets_train_df = prepared_tweets_df # For this sample code, simply copy input to output
 
