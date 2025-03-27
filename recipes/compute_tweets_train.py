@@ -7,7 +7,6 @@ from dataiku import pandasutils as pdu
 prepared_tweets = dataiku.Dataset("prepared_tweets")
 prepared_tweets_df = prepared_tweets.get_dataframe()
 
-
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
 # Filter to balance the data on label column
 
