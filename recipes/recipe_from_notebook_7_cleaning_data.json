@@ -32,7 +32,7 @@
     "main": {
       "items": [
         {
-          "ref": "cleaned_tweets_encryption",
+          "ref": "cleaned_tweets",
           "appendMode": false
         }
       ]

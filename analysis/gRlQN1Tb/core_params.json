@@ -1,5 +1,5 @@
 {
-  "inputDatasetSmartName": "cleaned_tweets_encryption",
+  "inputDatasetSmartName": "cleaned_tweets",
   "script": {
     "steps": [],
     "maxProcessedMemTableBytes": -1,
