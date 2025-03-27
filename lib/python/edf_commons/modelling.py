@@ -94,7 +94,7 @@ def preprocess_data(df: pd.DataFrame, tfidf: TfidfVectorizer, label_col: str = '
 
                 with open(local_file_path, 'wb') as file:
                     pickle.dump(tfidf, file)
-                    
+
                 MODELS_DATA_FOLDER = dataiku.Folder(MODEL_FOLDER_ID)
                 MODELS_DATA_FOLDER.upload_file(path, local_file_path)
 
