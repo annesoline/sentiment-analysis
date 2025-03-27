@@ -30,7 +30,7 @@ MODELS_DATA_FOLDER = dataiku.Folder(MODEL_FOLDER_ID)
 # # Input
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-tweets_eval = dataiku.Dataset("prepared_tweets")
+tweets_eval = dataiku.Dataset("tweets_eval")
 eval_df = tweets_eval.get_dataframe()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
