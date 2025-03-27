@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import pandas as pd, numpy as np
+import dataiku
 
 # Read recipe inputs
 prepared_tweets = dataiku.Dataset("prepared_tweets")
