@@ -34,9 +34,9 @@ def apply_stemming(text):
     stemmed_words = [stemmer.stem(word) for word in words]
     return ' '.join(stemmed_words)
 
-balanced_df['text'] = balanced_df['text'].apply(apply_stemming)
+cleaned_tweets_encryption_df['text'] = cleaned_tweets_encryption_df['text'].apply(apply_stemming)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Recipe outputs
 prepared_tweets_encryption = dataiku.Dataset("prepared_tweets")
-prepared_tweets_encryption.write_with_schema(balanced_df)
+prepared_tweets_encryption.write_with_schema(cleaned_tweets_encryption_df)
