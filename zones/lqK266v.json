@@ -15,19 +15,23 @@
       "objectType": "MANAGED_FOLDER"
     },
     {
-      "objectId": "eval_metrics",
-      "objectType": "DATASET"
-    },
-    {
-      "objectId": "eval_prediction_results",
-      "objectType": "DATASET"
-    },
-    {
       "objectId": "lr_metrics",
       "objectType": "DATASET"
     },
     {
       "objectId": "metrics_per_fold",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "11_1_evaluation_machine_learning",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "eval_metrics",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "eval_prediction_results",
       "objectType": "DATASET"
     }
   ],
