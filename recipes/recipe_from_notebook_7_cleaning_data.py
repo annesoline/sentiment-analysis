@@ -230,6 +230,5 @@ df['text'] = df['text'].str.lower()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Recipe outputs
-# Dataset cleaned_tweets_encryption renamed to cleaned_tweets by anne-soline.guilbert-ly@dataiku.com on 2025-03-27 14:29:54
 cleaned_tweets_encryption = dataiku.Dataset("cleaned_tweets")
-cleaned_tweets_encryption.write_with_schema(cleaned_tweets_encryption_df)
+cleaned_tweets_encryption.write_with_schema(df)
