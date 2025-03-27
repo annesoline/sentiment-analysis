@@ -3,6 +3,14 @@
   "color": "#4B8021",
   "items": [
     {
+      "objectId": "recipe_from_notebook_10_deep_learning",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "dl_metrics",
+      "objectType": "DATASET"
+    },
+    {
       "objectId": "zdw6Lwnn",
       "objectType": "MANAGED_FOLDER"
     }
