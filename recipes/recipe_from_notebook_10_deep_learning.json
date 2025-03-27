@@ -18,7 +18,16 @@
   "hashPropagationBehavior": "INHERIT",
   "variables": {},
   "dkuProperties": [],
-  "inputs": {},
+  "inputs": {
+    "main": {
+      "items": [
+        {
+          "ref": "tweets_train",
+          "deps": []
+        }
+      ]
+    }
+  },
   "outputs": {
     "main": {
       "items": [
