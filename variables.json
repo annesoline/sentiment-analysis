@@ -1,6 +1,8 @@
 {
   "models_path": "/lr",
   "tfidf_path": "/tfidf",
+  "confusion_matrices_path": "/confusion_matrices",
+  "epochs_perf": "/epochs_perf",
   "model_folder_id": "VQ6fLov2",
   "artefacts_folder_id": "2T1uAdOy"
 }
