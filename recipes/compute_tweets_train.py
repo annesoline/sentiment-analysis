@@ -12,7 +12,7 @@ prepared_tweets_df = prepared_tweets.get_dataframe()
 # Filter to balance the data on label column
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-cleaned_tweets_encryption_df['label'].value_counts()
+prepared_tweets_df['label'].value_counts()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 min_count = cleaned_tweets_encryption_df['label'].value_counts().min()
