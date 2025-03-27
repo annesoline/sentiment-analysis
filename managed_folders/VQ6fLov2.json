@@ -1,5 +1,5 @@
 {
-  "name": "models_encrypted_data",
+  "name": "models_data",
   "type": "S3",
   "params": {
     "bucket": "gis-dataiker-2-data-1",
