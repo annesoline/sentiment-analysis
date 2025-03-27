@@ -1,5 +1,6 @@
 {
   "models_path": "/lr",
   "tfidf_path": "/tfidf",
-  "model_folder_id": "VQ6fLov2"
+  "model_folder_id": "VQ6fLov2",
+  "artefacts_folder_id": "2T1uAdOy"
 }
