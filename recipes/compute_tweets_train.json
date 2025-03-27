@@ -36,7 +36,7 @@
           "appendMode": false
         },
         {
-          "ref": "tweets_test",
+          "ref": "tweets_eval",
           "appendMode": false
         }
       ]
