@@ -193,5 +193,6 @@ with tempfile.TemporaryDirectory() as tmp_dir_name_encrypted:
 encrypted_metrics = dataiku.Dataset("lr_metrics")
 encrypted_metrics.write_with_schema(encrypted_metrics_df)
 
-encrypted_metrics_per_fold = dataiku.Dataset("encrypted_metrics_per_fold")
+# Dataset encrypted_metrics_per_fold renamed to metrics_per_fold by anne-soline.guilbert-ly@dataiku.com on 2025-03-27 12:03:10
+encrypted_metrics_per_fold = dataiku.Dataset("metrics_per_fold")
 encrypted_metrics_per_fold.write_with_schema(encrypted_metrics_per_fold_df)

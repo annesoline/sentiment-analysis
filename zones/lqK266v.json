@@ -7,10 +7,6 @@
       "objectType": "RECIPE"
     },
     {
-      "objectId": "encrypted_metrics_per_fold",
-      "objectType": "DATASET"
-    },
-    {
       "objectId": "2T1uAdOy",
       "objectType": "MANAGED_FOLDER"
     },
@@ -28,6 +24,10 @@
     },
     {
       "objectId": "lr_metrics",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "metrics_per_fold",
       "objectType": "DATASET"
     }
   ],

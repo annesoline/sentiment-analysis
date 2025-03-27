@@ -36,7 +36,7 @@
           "appendMode": true
         },
         {
-          "ref": "encrypted_metrics_per_fold",
+          "ref": "metrics_per_fold",
           "appendMode": false
         },
         {
