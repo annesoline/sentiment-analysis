@@ -19,6 +19,40 @@ TFIDF_PATH = variables["standard"]["tfidf_path"]
 MODEL_FOLDER_ID = variables["standard"]["model_folder_id"]
 MODELS_DATA_FOLDER = dataiku.Folder(MODEL_FOLDER_ID)
 
+def preprocess_data_for_dl(X: pd.DataFrame, y: pd.Series) -> tuple[pd.DataFrame, pd.Series]:
+    """
+    Preprocesses the data by handling categorical variables with one-hot encoding,
+    numerical columns with standard scaling, and text data with tokenization and padding.
+
+    Parameters:
+    X (pd.DataFrame): The data to preprocess.
+    y (pd.Series): The label to encode.
+
+    Returns:
+    pd.DataFrame: The processed data including numerical, categorical, and text data.
+    pd.Series: The processed label.
+    """
+
+    # Handle numerical columns with standard scaling
+    numerical_features = ['tweet_length_chars', 'tweet_length_words']
+    scaler = StandardScaler()
+    X_numerical = scaler.fit_transform(X[numerical_features])
+
+    # Handle text data with tokenization and padding
+    tokenizer = Tokenizer(num_words=5000)
+    tokenizer.fit_on_texts(X['text'].astype(str))  # Ensure text data is string
+    X_text = tokenizer.texts_to_sequences(X['text'].astype(str))  # Ensure text data is string
+    X_text = pad_sequences(X_text, maxlen=100)
+
+    # Concatenate processed categorical, numerical, and text features
+    X_processed = pd.concat([pd.DataFrame(X_numerical, columns=numerical_features), pd.DataFrame(X_text)], axis=1)
+
+    label_encoder = LabelEncoder()
+    y = pd.Series(label_encoder.fit_transform(y))
+
+    return X_processed, y
+
+
 def preprocess_data(df: pd.DataFrame, tfidf: TfidfVectorizer, label_col: str = 'label') -> tuple[pd.DataFrame, pd.Series]:
 
     features = ['tweet_length_chars', 'tweet_length_words', 'repetitive_letters',
