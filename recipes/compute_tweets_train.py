@@ -20,6 +20,7 @@ print(train_df['label'].value_counts())
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 min_count = train_df['label'].value_counts().min()
+balanced_df = train_df.copy()
 balanced_df = train_df.groupby('label', group_keys=False).apply(lambda x: x.sample(min(len(x), min_count))).reset_index(drop=True)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
