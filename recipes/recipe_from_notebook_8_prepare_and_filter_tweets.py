@@ -10,7 +10,6 @@ from dataiku import pandasutils as pdu
 import pandas as pd
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-# Dataset cleaned_tweets_encryption renamed to cleaned_tweets by anne-soline.guilbert-ly@dataiku.com on 2025-03-27 14:29:54
 cleaned_tweets_encryption = dataiku.Dataset("cleaned_tweets")
 cleaned_tweets_encryption_df = cleaned_tweets_encryption.get_dataframe()
 
