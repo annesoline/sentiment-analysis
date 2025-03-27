@@ -53,6 +53,7 @@ DL_MODELS_DATA_FOLDER = dataiku.Folder(DL_MODELS_FOLDER_ID)
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 tweets_train = dataiku.Dataset("tweets_train")
 df = tweets_train.get_dataframe()
+df = sample(5000)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
 # # Deep Learning
