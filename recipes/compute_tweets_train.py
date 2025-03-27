@@ -28,5 +28,5 @@ prepared_tweets_df['label'].value_counts()
 tweets_train = dataiku.Dataset("tweets_train")
 tweets_train.write_with_schema(balanced_df)
 
-tweets_eval = dataiku.Dataset("tweets_test")
+tweets_eval = dataiku.Dataset("tweets_eval")
 tweets_eval.write_with_schema(eval_df)
