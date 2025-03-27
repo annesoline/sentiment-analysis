@@ -126,7 +126,7 @@ def apply_and_evaluate_deep_learning_model(X: pd.DataFrame, y: pd.Series) -> tup
                   metrics=['accuracy'])
 
     # Train the model
-    history = model.fit(train_dataset, epochs=2, validation_data=test_dataset, verbose=1)
+    history = model.fit(train_dataset, epochs=10, validation_data=test_dataset, verbose=1)
     
     # Evaluate the model
     loss, accuracy = model.evaluate(test_dataset, verbose=0)
