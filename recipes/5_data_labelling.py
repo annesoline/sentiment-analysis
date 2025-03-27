@@ -11,13 +11,13 @@ whole_df = enhanced_tweets_informations.get_dataframe()
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 def get_sentiment_label(text):
     polarity = TextBlob(text).sentiment.polarity
-    if polarity <= -0.6:
+    if polarity <= -0.4:
         return "very negative"
-    elif -0.6 < polarity <= -0.2:
+    elif -0.4 < polarity <= -0.05:
         return "negative"
-    elif -0.2 < polarity <= 0.2:
+    elif -0.05 < polarity <= 0.05:
         return "neutral"
-    elif 0.2 < polarity <= 0.6:
+    elif 0.05 < polarity <= 0.4:
         return "positive"
     else:
         return "very positive"
