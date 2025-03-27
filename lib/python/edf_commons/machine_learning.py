@@ -1,3 +1,5 @@
+import pandas as pd
+
 def preprocess_data(df: pd.DataFrame, tfidf: TfidfVectorizer, label_col: str = 'label') -> tuple[pd.DataFrame, pd.Series]:
 
     features = ['tweet_length_chars', 'tweet_length_words', 'repetitive_letters',
