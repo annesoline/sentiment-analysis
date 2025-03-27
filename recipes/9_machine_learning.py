@@ -131,7 +131,7 @@ with tempfile.TemporaryDirectory() as temp_dir:
     MODELS_DATA_FOLDER.upload_file(model_pickle_path, local_file_path)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
-# # Output
+# # Outputs
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 metrics_per_fold_df = pd.DataFrame()
