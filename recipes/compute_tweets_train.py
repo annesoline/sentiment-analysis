@@ -19,7 +19,7 @@ min_count = prepared_tweets_df['label'].value_counts().min()
 balanced_df = prepared_tweets_df.groupby('label', group_keys=False).apply(lambda x: x.sample(min(len(x), min_count))).reset_index(drop=True)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-balanced_df['label'].value_counts()
+prepared_tweets_df['label'].value_counts()
 
 
 tweets_train_df = prepared_tweets_df # For this sample code, simply copy input to output
