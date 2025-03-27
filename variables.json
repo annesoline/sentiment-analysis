@@ -1,4 +1,5 @@
 {
-  "MODELS_PATH": "/lr",
-  "TFIDF_PATH": "/tfidf"
+  "models_path": "/lr",
+  "tfidf_path": "/tfidf",
+  "model_folder_id": "VQ6fLov2"
 }
