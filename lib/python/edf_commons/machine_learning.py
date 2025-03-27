@@ -10,13 +10,14 @@ import pickle
 import numpy as np
 
 DATE_TIME = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
-MODELS_DATA_FOLDER = dataiku.Folder("VQ6fLov2")
 
 # Import project variables
 project = dataiku.Project()
 variables = project.get_variables()
 MODELS_PATH = variables["standard"]["models_path"]
 TFIDF_PATH = variables["standard"]["tfidf_path"]
+MODEL_FOLDER_ID = variables["standard"]["model_folder_id"]
+MODELS_DATA_FOLDER = dataiku.Folder(MODEL_FOLDER_ID)
 
 def preprocess_data(df: pd.DataFrame, tfidf: TfidfVectorizer, label_col: str = 'label') -> tuple[pd.DataFrame, pd.Series]:
 
