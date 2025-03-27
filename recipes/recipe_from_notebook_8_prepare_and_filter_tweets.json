@@ -32,7 +32,7 @@
     "main": {
       "items": [
         {
-          "ref": "prepared_tweets_encryption",
+          "ref": "prepared_tweets",
           "appendMode": false
         }
       ]

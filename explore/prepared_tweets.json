@@ -1,5 +1,4 @@
 {
-  "inputDatasetSmartName": "prepared_tweets",
   "script": {
     "steps": [],
     "maxProcessedMemTableBytes": -1,
@@ -71,18 +70,8 @@
     "previewMode": "ALL_ROWS"
   },
   "charts": [],
-  "name": "Deep learning for label on prepared_tweets_encryption",
-  "customMeasures": [],
-  "creationTag": {
-    "versionNumber": 0,
-    "lastModifiedBy": {
-      "login": "anne-soline.guilbert-ly@dataiku.com"
-    },
-    "lastModifiedOn": 1742809065308
+  "interactiveSearch": {
+    "savedQueries": []
   },
-  "tags": [],
-  "customFields": {},
-  "checklists": {
-    "checklists": []
-  }
+  "customMeasures": []
 }
