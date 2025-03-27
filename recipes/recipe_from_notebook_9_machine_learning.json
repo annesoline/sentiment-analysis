@@ -46,6 +46,10 @@
         {
           "ref": "VQ6fLov2",
           "appendMode": false
+        },
+        {
+          "ref": "eval_metrics",
+          "appendMode": false
         }
       ]
     }
