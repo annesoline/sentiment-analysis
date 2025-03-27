@@ -1,3 +1,4 @@
 {
-  "MODELS_PATH": "/lr"
+  "MODELS_PATH": "/lr",
+  "TFIDF_PATH": "/tfidf"
 }
