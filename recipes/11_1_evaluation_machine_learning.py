@@ -116,17 +116,3 @@ eval_prediction_results.write_with_schema(eval_prediction_results_df)
 
 eval_metrics = dataiku.Dataset("eval_metrics")
 eval_metrics.write_with_schema(eval_metrics_df)
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-# Recipe outputs
-eval_prediction_results = dataiku.Dataset("eval_prediction_results")
-eval_prediction_results.write_with_schema(pandas_dataframe)
-eval_metrics = dataiku.Dataset("eval_metrics")
-eval_metrics.write_with_schema(pandas_dataframe)
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-# Recipe outputs
-eval_metrics = dataiku.Dataset("eval_metrics")
-eval_metrics.write_with_schema(pandas_dataframe)
-eval_prediction_results = dataiku.Dataset("eval_prediction_results")
-eval_prediction_results.write_with_schema(pandas_dataframe)
