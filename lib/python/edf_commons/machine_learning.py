@@ -1,4 +1,5 @@
 import pandas as pd
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 def preprocess_data(df: pd.DataFrame, tfidf: TfidfVectorizer, label_col: str = 'label') -> tuple[pd.DataFrame, pd.Series]:
 
