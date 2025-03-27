@@ -15,7 +15,7 @@ import os
 import pickle
 import matplotlib.pyplot as plt
 import seaborn as sns
-from edf_commons.machine_learning import preprocess_data
+from edf_commons.modelling import preprocess_data
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
 # # Global variables
