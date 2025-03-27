@@ -208,4 +208,4 @@ save_image("epochs_perf_evolution_", EPOCHS_PERF_FOLDER_ID)
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Recipe outputs
 dl_metrics = dataiku.Dataset("dl_metrics")
-dl_metrics.write_with_schema(pandas_dataframe)
+dl_metrics.write_with_schema(dl_metrics)
