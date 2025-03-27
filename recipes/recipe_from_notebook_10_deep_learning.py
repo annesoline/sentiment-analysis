@@ -209,5 +209,3 @@ save_image("epochs_perf_evolution_", EPOCHS_PERF_FOLDER_ID)
 # Recipe outputs
 dl_metrics = dataiku.Dataset("dl_metrics")
 dl_metrics.write_with_schema(pandas_dataframe)
-zdw6lwnn = dataiku.Folder("zdw6Lwnn")
-zdw6lwnn_info = zdw6lwnn.get_info()
