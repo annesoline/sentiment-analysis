@@ -21,7 +21,7 @@ from sklearn.metrics import confusion_matrix
 from sklearn.metrics import ConfusionMatrixDisplay  
 from sklearn.metrics import classification_report  
 
-import matplotlib.pyplot as plt  # Added import for plt
+import matplotlib.pyplot as plt
 
 from datetime import datetime
 import os
