@@ -183,7 +183,7 @@ with tempfile.TemporaryDirectory() as temp_dir:
 # remove last metrics
 report_df = report_df.iloc[:-3]
 # add model name column
-nn_artefact_name = f"lr_{DATE_TIME}"
+nn_artefact_name = f"nn_{DATE_TIME}"
 report_df["model"] = nn_artefact_name
 # add date time column
 report_df["date_time"] = DATE_TIME
