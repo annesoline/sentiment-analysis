@@ -164,8 +164,8 @@ metrics, history, report_df, dl_model = apply_and_evaluate_deep_learning_model(X
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Pipeline for encrypted data
-dl_artefact_name = f"df_{DATE_TIME}"
-artefact_pickle_name = f"{dl_artefact_name}.pkl"
+nn_artefact_name = f"nn_{DATE_TIME}"
+artefact_pickle_name = f"{nn_artefact_name}.pkl"
 
 with tempfile.TemporaryDirectory() as temp_dir:
 
@@ -183,7 +183,6 @@ with tempfile.TemporaryDirectory() as temp_dir:
 # remove last metrics
 report_df = report_df.iloc[:-3]
 # add model name column
-nn_artefact_name = f"nn_{DATE_TIME}"
 report_df["model"] = nn_artefact_name
 # add date time column
 report_df["date_time"] = DATE_TIME
