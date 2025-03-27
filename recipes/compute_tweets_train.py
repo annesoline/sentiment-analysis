@@ -7,7 +7,7 @@ import dataiku
 prepared_tweets = dataiku.Dataset("prepared_tweets")
 prepared_tweets_df = prepared_tweets.get_dataframe()
 
-# Split the data into 80% training and 20% testing
+# Split the data into 80% training and 20% eval
 train_df = prepared_tweets_df.sample(frac=0.8, random_state=42)
 eval_df = prepared_tweets_df.drop(train_df.index)
 
