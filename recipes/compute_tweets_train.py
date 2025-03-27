@@ -2,7 +2,6 @@
 
 import pandas as pd, numpy as np
 
-
 # Read recipe inputs
 prepared_tweets = dataiku.Dataset("prepared_tweets")
 prepared_tweets_df = prepared_tweets.get_dataframe()
