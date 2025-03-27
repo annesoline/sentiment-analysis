@@ -21,6 +21,10 @@
     {
       "objectId": "VQ6fLov2",
       "objectType": "MANAGED_FOLDER"
+    },
+    {
+      "objectId": "eval_metrics",
+      "objectType": "DATASET"
     }
   ],
   "shared": [],
