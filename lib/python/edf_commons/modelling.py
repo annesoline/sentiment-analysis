@@ -53,7 +53,8 @@ def preprocess_data_for_dl(X: pd.DataFrame, y: pd.Series) -> tuple[pd.DataFrame,
     # Concatenate processed categorical, numerical, and text features
     X_processed = pd.concat([pd.DataFrame(X_numerical, columns=numerical_features), pd.DataFrame(X_text)], axis=1)
 
-     y = y.map(LABEL_MAPPING)
+    y = y.map(LABEL_MAPPING)
+    
     return X_processed, y
 
 
