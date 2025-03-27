@@ -69,6 +69,9 @@ with tempfile.TemporaryDirectory() as temp_directory_name:
     with open(local_file_path, 'rb') as file:
         lr_model = pickle.load(file)
 
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
+# # Evaluation
+
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Preprocess the data
 X_eval, y_eval, _ = preprocess_data(eval_df, tfidf)
@@ -104,7 +107,7 @@ eval_metrics_df = pd.DataFrame({
 })
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
-# # Create output datasets
+# # Output
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Recipe outputs
