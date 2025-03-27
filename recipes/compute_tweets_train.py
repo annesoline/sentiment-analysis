@@ -15,8 +15,8 @@ prepared_tweets_df = prepared_tweets.get_dataframe()
 prepared_tweets_df['label'].value_counts()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-min_count = cleaned_tweets_encryption_df['label'].value_counts().min()
-balanced_df = cleaned_tweets_encryption_df.groupby('label', group_keys=False).apply(lambda x: x.sample(min(len(x), min_count))).reset_index(drop=True)
+min_count = prepared_tweets_df['label'].value_counts().min()
+balanced_df = prepared_tweets_df.groupby('label', group_keys=False).apply(lambda x: x.sample(min(len(x), min_count))).reset_index(drop=True)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 balanced_df['label'].value_counts()
