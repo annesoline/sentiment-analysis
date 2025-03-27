@@ -21,20 +21,7 @@ cleaned_tweets_encryption_df = cleaned_tweets_encryption.get_dataframe()
 cleaned_tweets_encryption_df = cleaned_tweets_encryption_df[cleaned_tweets_encryption_df['is_duplicated'] == 0]
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
-# ## 8.2. Filter to balance the data on label column
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-cleaned_tweets_encryption_df['label'].value_counts()
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-min_count = cleaned_tweets_encryption_df['label'].value_counts().min()
-balanced_df = cleaned_tweets_encryption_df.groupby('label', group_keys=False).apply(lambda x: x.sample(min(len(x), min_count))).reset_index(drop=True)
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-balanced_df['label'].value_counts()
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
-# ## 8.3. Stemming
+# ## 8.2. Stemming
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Apply stemming to the 'text' column
