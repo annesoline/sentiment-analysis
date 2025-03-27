@@ -33,7 +33,7 @@
       "items": [
         {
           "ref": "encrypted_metrics",
-          "appendMode": false
+          "appendMode": true
         },
         {
           "ref": "encrypted_metrics_per_fold",
