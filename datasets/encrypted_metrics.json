@@ -2,7 +2,7 @@
   "type": "S3",
   "managed": true,
   "featureGroup": false,
-  "formatType": "parquet",
+  "formatType": "csv",
   "checklists": {
     "checklists": []
   },
@@ -25,12 +25,35 @@
     }
   },
   "formatParams": {
-    "parquetLowerCaseIdentifiers": false,
-    "representsNullFields": false,
-    "parquetCompressionMethod": "SNAPPY",
-    "parquetFlavor": "HIVE",
-    "parquetBlockSizeMB": 128,
-    "readTemporalMode": "AS_TEMPORAL"
+    "style": "excel",
+    "charset": "utf8",
+    "separator": "\t",
+    "quoteChar": "\"",
+    "escapeChar": "\\",
+    "maxRowChars": 100000000,
+    "dateSerializationFormat": "ISO",
+    "arrayMapFormat": "json",
+    "hiveSeparators": [
+      "\u0002",
+      "\u0003",
+      "\u0004",
+      "\u0005",
+      "\u0006",
+      "\u0007",
+      "\b"
+    ],
+    "skipRowsBeforeHeader": 0,
+    "parseHeaderRow": false,
+    "skipRowsAfterHeader": 0,
+    "probableNumberOfRecords": 0,
+    "normalizeBooleans": false,
+    "normalizeDoubles": true,
+    "readAdditionalColumnsBehavior": "INSERT_IN_DATA_WARNING",
+    "readMissingColumnsBehavior": "DISCARD_SILENT",
+    "readDataTypeMismatchBehavior": "DISCARD_WARNING",
+    "writeDataTypeMismatchBehavior": "DISCARD_WARNING",
+    "fileReadFailureBehavior": "FAIL",
+    "compress": "gz"
   },
   "partitioning": {
     "ignoreNonMatchingFile": false,
@@ -49,9 +72,9 @@
     "bucket": "gis-dataiker-2-data-1",
     "metastoreSynchronizationEnabled": true,
     "metastoreDatabaseName": "default",
-    "metastoreTableName": "${projectKey}_encrypted_metrics_df",
+    "metastoreTableName": "${projectKey}_encrypted_metrics",
     "connection": "dataiku-managed-storage",
-    "path": "/managed-dss-data/${projectKey}/encrypted_metrics_df",
+    "path": "/managed-dss-data/${projectKey}/encrypted_metrics",
     "notReadyIfEmpty": false,
     "filesSelectionRules": {
       "mode": "ALL",
@@ -70,7 +93,7 @@
       {"name":"Metric","type":"string"},
       {"name":"Value","type":"double"}
     ],
-    "userModified": false
+    "userModified": true
   },
   "typeSystemVersion": "V2",
   "dkuProperties": [],
