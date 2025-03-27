@@ -72,7 +72,9 @@
       {"name":"f1-score","type":"double"},
       {"name":"support","type":"double"},
       {"name":"class","type":"string"},
-      {"name":"Fold","type":"bigint"}
+      {"name":"Fold","type":"bigint"},
+      {"name":"model","type":"string"},
+      {"name":"date_time","type":"string"}
     ],
     "userModified": false
   },
