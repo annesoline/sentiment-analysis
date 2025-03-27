@@ -7,6 +7,7 @@ import dataiku
 import tempfile
 import os
 import pickle
+import numpy as np
 
 DATE_TIME = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
 TFIDF_PATH = "/tfidf"
