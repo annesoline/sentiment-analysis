@@ -50,7 +50,7 @@ def train_model_with_tfidf_stratified_kfold(df: pd.DataFrame, n_splits: int = 5,
     Returns:
     tuple: A tuple containing the list of accuracies, classification reports, ROC AUC scores for each fold, and the trained model.
     """
-    
+
     X_combined, y, tfidf = preprocess_data(df, None)
 
     # Step 4: Stratified K-Fold Cross Validation
