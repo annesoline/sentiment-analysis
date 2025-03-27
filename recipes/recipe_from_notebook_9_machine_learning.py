@@ -5,7 +5,8 @@ import pandas as pd
 from datetime import datetime
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-tweets_encryption_train = dataiku.Dataset("tweets_encryption_train")
+# Dataset tweets_encryption_train renamed to tweets_train by anne-soline.guilbert-ly@dataiku.com on 2025-03-27 11:53:12
+tweets_encryption_train = dataiku.Dataset("tweets_train")
 tweets_encryption_train_df = tweets_encryption_train.get_dataframe()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE

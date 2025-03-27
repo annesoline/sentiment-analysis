@@ -22,7 +22,7 @@
     "main": {
       "items": [
         {
-          "ref": "tweets_encryption_train",
+          "ref": "tweets_train",
           "deps": []
         }
       ]
