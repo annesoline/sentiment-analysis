@@ -3,6 +3,10 @@
   "color": "#4B8021",
   "items": [
     {
+      "objectId": "recipe_from_notebook_9_machine_learning",
+      "objectType": "RECIPE"
+    },
+    {
       "objectId": "2T1uAdOy",
       "objectType": "MANAGED_FOLDER"
     },
@@ -12,6 +16,10 @@
     },
     {
       "objectId": "eval_metrics",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "eval_prediction_results",
       "objectType": "DATASET"
     },
     {
