@@ -23,7 +23,6 @@ variables = project.get_variables()
 MODELS_PATH = variables["standard"]["models_path"]
 TFIDF_PATH = variables["standard"]["tfidf_path"]
 MODEL_FOLDER_ID = variables["standard"]["model_folder_id"]
-MODELS_DATA_FOLDER = dataiku.Folder(MODEL_FOLDER_ID)
 
 def preprocess_data_for_dl(X: pd.DataFrame, y: pd.Series) -> tuple[pd.DataFrame, pd.Series]:
     """
@@ -53,8 +52,9 @@ def preprocess_data_for_dl(X: pd.DataFrame, y: pd.Series) -> tuple[pd.DataFrame,
     # Concatenate processed categorical, numerical, and text features
     X_processed = pd.concat([pd.DataFrame(X_numerical, columns=numerical_features), pd.DataFrame(X_text)], axis=1)
 
-    y = y.map(LABEL_MAPPING)
-    
+    label_encoder = LabelEncoder()
+    y = pd.Series(label_encoder.fit_transform(y))
+
     return X_processed, y
 
 
@@ -94,7 +94,8 @@ def preprocess_data(df: pd.DataFrame, tfidf: TfidfVectorizer, label_col: str = '
 
                 with open(local_file_path, 'wb') as file:
                     pickle.dump(tfidf, file)
-
+                    
+                MODELS_DATA_FOLDER = dataiku.Folder(MODEL_FOLDER_ID)
                 MODELS_DATA_FOLDER.upload_file(path, local_file_path)
 
         except ValueError as e:
