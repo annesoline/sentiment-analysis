@@ -73,6 +73,7 @@
       {"name":"date","type":"string"},
       {"name":"flag","type":"string"},
       {"name":"user","type":"string"},
+      {"name":"text","type":"string"},
       {"name":"is_duplicated","type":"bigint"},
       {"name":"tweet_length_chars","type":"bigint"},
       {"name":"tweet_length_words","type":"bigint"},
@@ -83,8 +84,7 @@
       {"name":"language","type":"string"},
       {"name":"NER","type":"string"},
       {"name":"email_present","type":"string"},
-      {"name":"ip_present","type":"string"},
-      {"name":"text","type":"string"}
+      {"name":"ip_present","type":"string"}
     ],
     "userModified": false
   },
