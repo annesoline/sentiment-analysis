@@ -67,14 +67,14 @@
   },
   "schema": {
     "columns": [
+      {"name":"model","type":"string"},
+      {"name":"date_time","type":"string"},
       {"name":"precision","type":"double"},
       {"name":"recall","type":"double"},
       {"name":"f1-score","type":"double"},
       {"name":"support","type":"double"},
       {"name":"class","type":"string"},
-      {"name":"Fold","type":"bigint"},
-      {"name":"model","type":"string"},
-      {"name":"date_time","type":"string"}
+      {"name":"Fold","type":"double"}
     ],
     "userModified": false
   },
