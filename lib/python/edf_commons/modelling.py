@@ -15,6 +15,7 @@ import pickle
 import numpy as np
 
 DATE_TIME = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
+LABEL_MAPPING = {'very negative': 0, 'negative': 1, 'neutral': 2, 'positive': 3, 'very positive': 4}
 
 # Import project variables
 project = dataiku.Project()
