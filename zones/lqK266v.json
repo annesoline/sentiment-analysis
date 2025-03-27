@@ -25,6 +25,10 @@
     {
       "objectId": "eval_metrics",
       "objectType": "DATASET"
+    },
+    {
+      "objectId": "eval_prediction_results",
+      "objectType": "DATASET"
     }
   ],
   "shared": [],
