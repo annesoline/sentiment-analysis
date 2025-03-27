@@ -4,6 +4,9 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import LabelEncoder
 from datetime import datetime
 import dataiku
+import tempfile
+import os
+import pickle
 
 DATE_TIME = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
 TFIDF_PATH = "/tfidf"
