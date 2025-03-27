@@ -12,7 +12,12 @@ import numpy as np
 DATE_TIME = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
 TFIDF_PATH = "/tfidf"
 MODELS_DATA_FOLDER = dataiku.Folder("VQ6fLov2")
-MODELS_PATH = "/lr"
+
+# Import project variables
+project = dataiku.Project()
+variables = project.get_variables()
+MODELS_PATH = variables["standard"]["MODELS_PATH"]
+TFIDF_PATH = variables["standard"]["TFIDF_PATH"]
 
 def preprocess_data(df: pd.DataFrame, tfidf: TfidfVectorizer, label_col: str = 'label') -> tuple[pd.DataFrame, pd.Series]:
 
