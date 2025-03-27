@@ -89,8 +89,18 @@
     }
   },
   "schema": {
-    "columns": [],
-    "userModified": true
+    "columns": [
+      {"name":"precision","type":"double"},
+      {"name":"recall","type":"double"},
+      {"name":"f1-score","type":"double"},
+      {"name":"support","type":"double"},
+      {"name":"model","type":"string"},
+      {"name":"date_time","type":"string"},
+      {"name":"label","type":"string"},
+      {"name":"average_loss","type":"double"},
+      {"name":"average_accuracy","type":"double"}
+    ],
+    "userModified": false
   },
   "typeSystemVersion": "V2",
   "dkuProperties": [],
