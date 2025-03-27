@@ -6,15 +6,19 @@ import dataiku
 from dataiku import pandasutils as pdu
 import pandas as pd
 from datetime import datetime
+
 import numpy as np
+
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report, roc_auc_score, precision_score, recall_score, f1_score
 from sklearn.model_selection import StratifiedKFold
+
 import tempfile
 import os
 import pickle
 import matplotlib.pyplot as plt
 import seaborn as sns
+
 from edf_commons.modelling import preprocess_data
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
