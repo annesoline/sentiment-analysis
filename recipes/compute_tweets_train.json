@@ -6,7 +6,8 @@
       "envMode": "INHERIT"
     },
     "containerSelection": {
-      "containerMode": "INHERIT"
+      "containerMode": "EXPLICIT_CONTAINER",
+      "containerConf": "GPU-S-1-GPU"
     },
     "skipPrerunValidate": false
   },
