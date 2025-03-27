@@ -52,6 +52,5 @@ balanced_df['text'] = balanced_df['text'].apply(apply_stemming)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Recipe outputs
-# Dataset prepared_tweets_encryption renamed to prepared_tweets by anne-soline.guilbert-ly@dataiku.com on 2025-03-27 14:30:30
 prepared_tweets_encryption = dataiku.Dataset("prepared_tweets")
 prepared_tweets_encryption.write_with_schema(balanced_df)
