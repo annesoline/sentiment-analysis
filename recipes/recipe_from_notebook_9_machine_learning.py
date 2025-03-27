@@ -31,7 +31,7 @@ MODELS_DATA_FOLDER = dataiku.Folder(MODEL_FOLDER_ID)
 # # Input
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-tweets_train = dataiku.Dataset("prepared_tweets")
+tweets_train = dataiku.Dataset("tweets_train")
 train_df = tweets_train.get_dataframe()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
