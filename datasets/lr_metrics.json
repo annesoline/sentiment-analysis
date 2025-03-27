@@ -90,10 +90,15 @@
   },
   "schema": {
     "columns": [
-      {"name":"Metric","type":"string"},
-      {"name":"Value","type":"double"}
+      {"name":"Mean Accuracy","type":"double"},
+      {"name":"Mean Precision","type":"double"},
+      {"name":"Mean Recall","type":"double"},
+      {"name":"Mean F1 Score","type":"double"},
+      {"name":"Mean ROC AUC","type":"double"},
+      {"name":"Model Name","type":"string"},
+      {"name":"Date and Time","type":"string"}
     ],
-    "userModified": true
+    "userModified": false
   },
   "typeSystemVersion": "V2",
   "dkuProperties": [],
