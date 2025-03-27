@@ -3,6 +3,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import LabelEncoder
 from datetime import datetime
+import dataiku
 
 DATE_TIME = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
 TFIDF_PATH = "/tfidf"
