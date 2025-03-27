@@ -27,7 +27,7 @@
           "appendMode": false
         },
         {
-          "ref": "tweets_train",
+          "ref": "tweets_train_",
           "appendMode": false
         }
       ]

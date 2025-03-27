@@ -6,7 +6,8 @@ from datetime import datetime
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Dataset tweets_encryption_train renamed to tweets_train by anne-soline.guilbert-ly@dataiku.com on 2025-03-27 11:53:12
-tweets_encryption_train = dataiku.Dataset("tweets_train")
+# Dataset tweets_train renamed to tweets_train_ by anne-soline.guilbert-ly@dataiku.com on 2025-03-27 14:36:50
+tweets_encryption_train = dataiku.Dataset("tweets_train_")
 tweets_encryption_train_df = tweets_encryption_train.get_dataframe()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
