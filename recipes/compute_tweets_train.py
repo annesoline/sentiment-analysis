@@ -21,10 +21,6 @@ balanced_df = prepared_tweets_df.groupby('label', group_keys=False).apply(lambda
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 prepared_tweets_df['label'].value_counts()
 
-
-tweets_train_df = prepared_tweets_df # For this sample code, simply copy input to output
-
-
 # Write recipe outputs
 tweets_train = dataiku.Dataset("tweets_train")
-tweets_train.write_with_schema(tweets_train_df)
+tweets_train.write_with_schema(prepared_tweets_df)
