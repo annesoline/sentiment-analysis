@@ -190,7 +190,6 @@ with tempfile.TemporaryDirectory() as tmp_dir_name_encrypted:
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Recipe outputs
-# Dataset encrypted_metrics renamed to lr_metrics by anne-soline.guilbert-ly@dataiku.com on 2025-03-27 12:02:44
 encrypted_metrics = dataiku.Dataset("lr_metrics")
 encrypted_metrics.write_with_schema(encrypted_metrics_df)
 
