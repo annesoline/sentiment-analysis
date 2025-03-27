@@ -3,6 +3,9 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import LabelEncoder
 
+DATE_TIME = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
+TFIDF_PATH = "/tfidf"
+
 def preprocess_data(df: pd.DataFrame, tfidf: TfidfVectorizer, label_col: str = 'label') -> tuple[pd.DataFrame, pd.Series]:
 
     features = ['tweet_length_chars', 'tweet_length_words', 'repetitive_letters',
