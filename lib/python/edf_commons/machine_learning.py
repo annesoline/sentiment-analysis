@@ -1,7 +1,11 @@
 import pandas as pd
+
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import LabelEncoder
+
+from tensorflow.keras.preprocessing.text import Tokenizer
+
 from datetime import datetime
 import dataiku
 import tempfile
