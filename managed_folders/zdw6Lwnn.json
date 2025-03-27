@@ -1,5 +1,5 @@
 {
-  "name": "experiments_finetuning",
+  "name": "df_models",
   "type": "S3",
   "params": {
     "bucket": "gis-dataiker-2-data-1",
