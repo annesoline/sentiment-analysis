@@ -17,6 +17,18 @@
     {
       "objectId": "10_deep_learning",
       "objectType": "RECIPE"
+    },
+    {
+      "objectId": "11_2_evaluation_deep_learning",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "dl_eval_prediction_results",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "dl_eval_metrics",
+      "objectType": "DATASET"
     }
   ],
   "shared": [],
