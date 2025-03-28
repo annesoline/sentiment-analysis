@@ -108,7 +108,7 @@
       {"name":"NER","type":"string"},
       {"name":"email_present","type":"string"},
       {"name":"ip_present","type":"string"},
-      {"name":"predicted","type":"bigint"},
+      {"name":"predicted","type":"string"},
       {"name":"probability","type":"double"},
       {"name":"correct_prediction","type":"boolean"}
     ],
