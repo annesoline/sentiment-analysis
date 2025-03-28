@@ -120,7 +120,7 @@ def apply_and_evaluate_deep_learning_model(X: pd.DataFrame, y: pd.Series) -> tup
     ])
 
     # Compile the model
-    model.compile(optimizer=Adam(learning_rate=0.0005), 
+    model.compile(optimizer=Adam(learning_rate=0.00001), 
                   loss='sparse_categorical_crossentropy', 
                   metrics=['accuracy'])
 
