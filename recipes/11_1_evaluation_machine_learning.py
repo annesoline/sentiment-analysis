@@ -25,6 +25,8 @@ variables = project.get_variables()
 MODELS_PATH = variables["standard"]["models_path"]
 MODEL_FOLDER_ID = variables["standard"]["model_folder_id"]
 MODELS_DATA_FOLDER = dataiku.Folder(MODEL_FOLDER_ID)
+LABEL_MAPPING = {'very negative': 0, 'negative': 1, 'neutral': 2, 'positive': 3, 'very positive': 4}
+INDEX_MAPPING = {v: k for k, v in LABEL_MAPPING.items()}
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
 # # Input
