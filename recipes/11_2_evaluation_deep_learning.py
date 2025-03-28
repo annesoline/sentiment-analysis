@@ -24,7 +24,7 @@ project = dataiku.Project()
 variables = project.get_variables()
 DL_MODEL_FOLDER_ID = variables["standard"]["dl_model_folder_id"]
 DL_MODELS_DATA_FOLDER = dataiku.Folder(DL_MODEL_FOLDER_ID)
-LABEL_MAPPING = {'very negative': 0, 'negative': 1, 'neutral': 2, 'positive': 3, 'very positive': 4}
+LABEL_MAPPING = 
 INDEX_MAPPING = {v: k for k, v in LABEL_MAPPING.items()}
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
@@ -69,9 +69,11 @@ class_probabilities = nn_model.predict(X_eval)
 for i in range(class_probabilities.shape[1]):
     class_name = INDEX_MAPPING[i]
     eval_prediction_results_df[f'{class_name}_probability'] = class_probabilities[:, i]
-
+    
 # Create the prediction column
+eval_prediction_results_df['max_probability'] = class_probabilities.max(axis=1)
 eval_prediction_results_df['prediction'] = eval_prediction_results_df.filter(like='_probability').idxmax(axis=1).str.replace('_probability', '')
+eval_prediction_results_df['prediction_label_id'] = eval_prediction_results_df['prediction'].map(LABEL_MAPPING)
 
 # Move label column next to prediction
 cols = eval_prediction_results_df.columns.tolist()
@@ -82,11 +84,14 @@ eval_prediction_results_df = eval_prediction_results_df[cols]
 eval_prediction_results_df['correct_prediction'] = eval_prediction_results_df['label'] == eval_prediction_results_df['prediction']
 
 # Calculate evaluation metrics
-accuracy = accuracy_score(y_eval, eval_prediction_results_df['predicted'])
-precision = precision_score(y_eval, eval_prediction_results_df['predicted'], average='weighted')
-recall = recall_score(y_eval, eval_prediction_results_df['predicted'], average='weighted')
-f1 = f1_score(y_eval, eval_prediction_results_df['predicted'], average='weighted')
-roc_auc = roc_auc_score(y_eval, nn_model.predict_proba(X_eval), multi_class='ovr', average='weighted')
+accuracy = accuracy_score(y_eval, eval_prediction_results_df['prediction_label_id'])
+precision = precision_score(y_eval, eval_prediction_results_df['prediction_label_id'], average='weighted')
+recall = recall_score(y_eval, eval_prediction_results_df['prediction_label_id'], average='weighted')
+f1 = f1_score(y_eval, eval_prediction_results_df['prediction_label_id'], average='weighted')
+roc_auc = roc_auc_score(pd.get_dummies(y_eval), pd.get_dummies(eval_prediction_results_df['prediction_label_id']), multi_class='ovr', average='weighted')
+
+# Drop max_probability
+eval_prediction_results_df = eval_prediction_results_df.drop(columns=['max_probability', 'prediction_label_id'], errors='ignore')
 
 # Print the evaluation metrics
 print(f"Accuracy: {accuracy}")
