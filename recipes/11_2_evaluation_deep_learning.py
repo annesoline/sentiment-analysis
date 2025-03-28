@@ -37,7 +37,7 @@ eval_df = tweets_eval.get_dataframe()
 dl_model_path = DL_MODELS_DATA_FOLDER.list_paths_in_partition()[-1]
 nn_name = dl_model_path.split("/")[-1].split(".pkl")[0]
 
-# load latest TFIDF model
+# load latest Deep Learning model
 with tempfile.TemporaryDirectory() as temp_directory_name:
 
     local_file_path = temp_directory_name + "/" + nn_name
