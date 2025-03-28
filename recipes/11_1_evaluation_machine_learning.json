@@ -33,7 +33,7 @@
       "items": [
         {
           "ref": "eval_metrics",
-          "appendMode": false
+          "appendMode": true
         },
         {
           "ref": "eval_prediction_results",
