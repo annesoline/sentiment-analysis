@@ -8,7 +8,7 @@ import pandas as pd
 
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score
 
-from edf_commons.machine_learning import preprocess_data
+from edf_commons.modelling import preprocess_data
 
 import tempfile
 from datetime import datetime
