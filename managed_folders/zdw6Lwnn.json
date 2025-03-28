@@ -1,5 +1,5 @@
 {
-  "name": "df_models_data",
+  "name": "dl_models_data",
   "type": "S3",
   "params": {
     "bucket": "gis-dataiker-2-data-1",
