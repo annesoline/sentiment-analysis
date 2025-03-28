@@ -55,7 +55,7 @@ with tempfile.TemporaryDirectory() as temp_directory_name:
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Preprocess the data
-X_eval, y_eval = preprocess_data_for_dl(eval_df, tfidf)
+X_eval, y_eval = preprocess_data_for_dl(eval_df, y_eval)
 
 # Predict
 eval_prediction_results_df = eval_df.copy()
