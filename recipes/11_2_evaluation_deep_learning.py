@@ -55,8 +55,8 @@ with tempfile.TemporaryDirectory() as temp_directory_name:
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Preprocess the data
-y = df['label']
-X_eval, y_eval = preprocess_data_for_dl(df[['tweet_length_chars', 'tweet_length_words', 'text']], y)
+y = eval_df['label']
+X_eval, y_eval = preprocess_data_for_dl(eval_df[['tweet_length_chars', 'tweet_length_words', 'text']], y)
 
 # Predict
 eval_prediction_results_df = eval_df.copy()
