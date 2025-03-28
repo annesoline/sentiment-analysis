@@ -101,6 +101,6 @@ eval_metrics.write_with_schema(eval_metrics_df)
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Recipe outputs
 dl_eval_prediction_results = dataiku.Dataset("dl_eval_prediction_results")
-dl_eval_prediction_results.write_with_schema(pandas_dataframe)
+dl_eval_prediction_results.write_with_schema(eval_prediction_results)
 dl_eval_metrics = dataiku.Dataset("dl_eval_metrics")
 dl_eval_metrics.write_with_schema(pandas_dataframe)
