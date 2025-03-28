@@ -114,7 +114,6 @@
       {"name":"very positive_probability","type":"float"},
       {"name":"label","type":"string"},
       {"name":"prediction","type":"string"},
-      {"name":"prediction_label_id","type":"bigint"},
       {"name":"correct_prediction","type":"boolean"}
     ],
     "userModified": false
