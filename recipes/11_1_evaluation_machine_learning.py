@@ -34,6 +34,7 @@ INDEX_MAPPING = {v: k for k, v in LABEL_MAPPING.items()}
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 tweets_eval = dataiku.Dataset("tweets_eval")
 eval_df = tweets_eval.get_dataframe()
+eval_df= eval_df.sample(1000)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Get the TFIDF model
@@ -81,7 +82,6 @@ X_eval, y_eval, _ = preprocess_data(eval_df, tfidf)
 # Predict
 eval_prediction_results_df = eval_df.copy()
 eval_prediction_results_df['predicted'] = lr_model.predict(X_eval)
-eval_prediction_results_df['predicted'] = eval_prediction_results_df['predicted'].map(INDEX_MAPPING)
 eval_prediction_results_df['probability'] = lr_model.predict_proba(X_eval)[:, 1]
 eval_prediction_results_df['correct_prediction'] = eval_prediction_results_df['label'] == eval_prediction_results_df['predicted']
 
@@ -91,6 +91,9 @@ precision = precision_score(y_eval, eval_prediction_results_df['predicted'], ave
 recall = recall_score(y_eval, eval_prediction_results_df['predicted'], average='weighted')
 f1 = f1_score(y_eval, eval_prediction_results_df['predicted'], average='weighted')
 roc_auc = roc_auc_score(y_eval, lr_model.predict_proba(X_eval), multi_class='ovr', average='weighted')
+
+# Remap the predicted labels from int to string
+eval_prediction_results_df['predicted'] = eval_prediction_results_df['predicted'].map(INDEX_MAPPING)
 
 # Print the evaluation metrics
 print(f"Accuracy: {accuracy}")
@@ -108,6 +111,12 @@ eval_metrics_df = pd.DataFrame({
     'Model Name': ['Logistic Regression'],
     'Date and Time': [datetime.now().strftime('%Y-%m-%d %H:%M:%S')]
 })
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+eval_prediction_results_df
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
+eval_prediction_results_df
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
 # # Output
