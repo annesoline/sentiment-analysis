@@ -34,7 +34,6 @@ INDEX_MAPPING = {v: k for k, v in LABEL_MAPPING.items()}
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 tweets_eval = dataiku.Dataset("tweets_eval")
 eval_df = tweets_eval.get_dataframe()
-eval_df= eval_df.sample(1000)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Get the TFIDF model
