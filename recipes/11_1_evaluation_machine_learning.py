@@ -54,7 +54,7 @@ with tempfile.TemporaryDirectory() as temp_directory_name:
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Get the Logistic Regression model
 lr_path = [path for path in MODELS_DATA_FOLDER.list_paths_in_partition() if "/lr/" in path][-1]
-lr_name = model_path.split("/")[-1].split(".pkl")[0]
+lr_name = MODELS_PATH.split("/")[-1].split(".pkl")[0]
 
 # load latest TFIDF model
 with tempfile.TemporaryDirectory() as temp_directory_name:
