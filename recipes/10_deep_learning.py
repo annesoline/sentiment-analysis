@@ -18,8 +18,8 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix
-from sklearn.metrics import ConfusionMatrixDisplay  
-from sklearn.metrics import classification_report  
+from sklearn.metrics import ConfusionMatrixDisplay
+from sklearn.metrics import classification_report
 
 import matplotlib.pyplot as plt
 
@@ -44,7 +44,7 @@ variables = project.get_variables()
 ARTEFACTS_FOLDER_ID = variables["standard"]["artefacts_folder_id"]
 CONFUSION_MATRICES_FOLDER_ID = variables["standard"]["confusion_matrices_path"]
 EPOCHS_PERF_FOLDER_ID = variables["standard"]["epochs_perf_path"]
-DL_MODELS_FOLDER_ID = variables["standard"]["df_model_folder_id"]
+DL_MODELS_FOLDER_ID = variables["standard"]["dl_model_folder_id"]
 DL_MODELS_DATA_FOLDER = dataiku.Folder(DL_MODELS_FOLDER_ID)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
@@ -65,7 +65,7 @@ X, y = preprocess_data_for_dl(df[['tweet_length_chars', 'tweet_length_words', 't
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 def save_image(img_name: str, folder_path: str)->None:
     """Save the image of a graph recently plotted.
-    
+
     ----------
     Parameters
         img_name: str
@@ -120,13 +120,13 @@ def apply_and_evaluate_deep_learning_model(X: pd.DataFrame, y: pd.Series) -> tup
     ])
 
     # Compile the model
-    model.compile(optimizer=Adam(learning_rate=0.00001), 
-                  loss='sparse_categorical_crossentropy', 
+    model.compile(optimizer=Adam(learning_rate=0.00001),
+                  loss='sparse_categorical_crossentropy',
                   metrics=['accuracy'])
 
     # Train the model
     history = model.fit(train_dataset, epochs=10, validation_data=test_dataset, verbose=1)
-    
+
     # Evaluate the model
     loss, accuracy = model.evaluate(test_dataset, verbose=0)
 
@@ -151,7 +151,7 @@ def apply_and_evaluate_deep_learning_model(X: pd.DataFrame, y: pd.Series) -> tup
 
     # Save metrics into a DataFrame
     metrics_df = pd.DataFrame({'average_loss': [loss], 'average_accuracy': [accuracy]})
-    
+
     return metrics_df, history, report_df, model
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
@@ -189,7 +189,7 @@ report_df["date_time"] = DATE_TIME
 report_df['label'] = report_df.index.map(INDEX_MAPPING)
 for col in metrics.columns:
     report_df[col] = metrics[col].iloc[0]
-    
+
 # drop the indexes
 report_df.reset_index(drop=True, inplace=True)
 
