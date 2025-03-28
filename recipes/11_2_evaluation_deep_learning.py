@@ -24,7 +24,7 @@ project = dataiku.Project()
 variables = project.get_variables()
 DL_MODEL_FOLDER_ID = variables["standard"]["dl_model_folder_id"]
 DL_MODELS_DATA_FOLDER = dataiku.Folder(DL_MODEL_FOLDER_ID)
-LABEL_MAPPING = 
+LABEL_MAPPING = {'very negative': 0, 'negative': 1, 'neutral': 2, 'positive': 3, 'very positive': 4}
 INDEX_MAPPING = {v: k for k, v in LABEL_MAPPING.items()}
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
@@ -33,6 +33,7 @@ INDEX_MAPPING = {v: k for k, v in LABEL_MAPPING.items()}
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 tweets_eval = dataiku.Dataset("tweets_eval")
 eval_df = tweets_eval.get_dataframe()
+eval_df = eval_df.sample(5000)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Get the Logistic Regression model
