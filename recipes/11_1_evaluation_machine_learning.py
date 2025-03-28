@@ -111,12 +111,6 @@ eval_metrics_df = pd.DataFrame({
     'Date and Time': [datetime.now().strftime('%Y-%m-%d %H:%M:%S')]
 })
 
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-eval_prediction_results_df
-
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-eval_prediction_results_df
-
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
 # # Output
 
