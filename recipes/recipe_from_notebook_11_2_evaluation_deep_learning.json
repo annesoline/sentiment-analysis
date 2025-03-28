@@ -28,7 +28,7 @@
         },
         {
           "ref": "dl_eval_metrics",
-          "appendMode": false
+          "appendMode": true
         }
       ]
     }
