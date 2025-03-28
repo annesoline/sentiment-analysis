@@ -34,7 +34,7 @@
       "items": [
         {
           "ref": "dl_metrics",
-          "appendMode": false
+          "appendMode": true
         },
         {
           "ref": "zdw6Lwnn",
