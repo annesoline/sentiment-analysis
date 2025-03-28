@@ -24,6 +24,8 @@ project = dataiku.Project()
 variables = project.get_variables()
 DL_MODEL_FOLDER_ID = variables["standard"]["dl_model_folder_id"]
 DL_MODELS_DATA_FOLDER = dataiku.Folder(DL_MODEL_FOLDER_ID)
+LABEL_MAPPING = {'very negative': 0, 'negative': 1, 'neutral': 2, 'positive': 3, 'very positive': 4}
+INDEX_MAPPING = {v: k for k, v in LABEL_MAPPING.items()}
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
 # # Input
@@ -31,6 +33,7 @@ DL_MODELS_DATA_FOLDER = dataiku.Folder(DL_MODEL_FOLDER_ID)
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 tweets_eval = dataiku.Dataset("tweets_eval")
 eval_df = tweets_eval.get_dataframe()
+eval_df = eval_df.sample(5000)
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Get the Logistic Regression model
@@ -60,9 +63,23 @@ X_eval, y_eval = preprocess_data_for_dl(eval_df[['tweet_length_chars', 'tweet_le
 
 # Predict
 eval_prediction_results_df = eval_df.copy()
-eval_prediction_results_df['predicted'] = nn_model.predict(X_eval)
-eval_prediction_results_df['probability'] = nn_model.predict_proba(X_eval)[:, 1]
-eval_prediction_results_df['correct_prediction'] = eval_prediction_results_df['label'] == eval_prediction_results_df['predicted']
+
+# Create class probabilities columns
+class_probabilities = nn_model.predict(X_eval)
+for i in range(class_probabilities.shape[1]):
+    class_name = INDEX_MAPPING[i]
+    eval_prediction_results_df[f'{class_name}_probability'] = class_probabilities[:, i]
+
+# Create the prediction column
+eval_prediction_results_df['prediction'] = eval_prediction_results_df.filter(like='_probability').idxmax(axis=1).str.replace('_probability', '')
+
+# Move label column next to prediction
+cols = eval_prediction_results_df.columns.tolist()
+cols.remove('label')
+cols.insert(cols.index('prediction'), 'label')
+eval_prediction_results_df = eval_prediction_results_df[cols]
+
+eval_prediction_results_df['correct_prediction'] = eval_prediction_results_df['label'] == eval_prediction_results_df['prediction']
 
 # Calculate evaluation metrics
 accuracy = accuracy_score(y_eval, eval_prediction_results_df['predicted'])
