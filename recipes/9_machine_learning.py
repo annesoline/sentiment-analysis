@@ -134,10 +134,6 @@ with tempfile.TemporaryDirectory() as temp_dir:
 # # Outputs
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-metrics_per_fold_df = pd.DataFrame()
-metrics_per_fold_df["model"] = lr_artefact_name
-metrics_per_fold_df["date_time"] = date_time
-
 for i, report in enumerate(reports):
     if isinstance(report, dict):
         # Remove 'accuracy', 'macro avg', and 'weighted avg' from the report
@@ -146,9 +142,12 @@ for i, report in enumerate(reports):
         report.pop('weighted avg', None)
 
         report_df = pd.DataFrame.from_dict(report).transpose()
-        report_df['class'] = report_df.index  # Save the key of each dictionary into a new column called "class"
+
+        report_df['Label'] = report_df.index  # Save the key of each dictionary into a new column called "class"
+        report_df = report_df.rename(columns={'precision': 'Precision', 'recall': 'Recall', 'f1-score': 'F1 Score', 'support': 'Support'})
         report_df['Fold'] = i + 1  # Add the fold number to the DataFrame
-        metrics_per_fold_df = pd.concat([metrics_per_fold_df, report_df], ignore_index=True)
+        report_df["Model"] = lr_artefact_name
+        report_df["Date Time"] = date_time
     else:
         print(f"Warning: Report for Fold {i+1} is not a dictionary and cannot be converted to a DataFrame.")
 
@@ -158,4 +157,4 @@ lr_metrics = dataiku.Dataset("lr_metrics")
 lr_metrics.write_with_schema(lr_metrics_df)
 
 metrics_per_fold = dataiku.Dataset("metrics_per_fold")
-metrics_per_fold.write_with_schema(metrics_per_fold_df)
+metrics_per_fold.write_with_schema(report_df)
