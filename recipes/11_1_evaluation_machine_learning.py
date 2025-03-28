@@ -79,6 +79,7 @@ X_eval, y_eval, _ = preprocess_data(eval_df, tfidf)
 # Predict
 eval_prediction_results_df = eval_df.copy()
 eval_prediction_results_df['predicted'] = lr_model.predict(X_eval)
+eval_prediction_results_df['predicted'] = eval_prediction_results_df['predicted'].map(INDEX_MAPPING)
 eval_prediction_results_df['probability'] = lr_model.predict_proba(X_eval)[:, 1]
 eval_prediction_results_df['correct_prediction'] = eval_prediction_results_df['label'] == eval_prediction_results_df['predicted']
 
