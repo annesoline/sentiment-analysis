@@ -282,6 +282,7 @@
     },
     "lastModifiedOn": 1741861087834
   },
+  "description": "The case studied here involves analysing the sentiments expressed in tweets about a topical issue.\nThe aim is to cover the entire data exploration and processing pipeline, in order to build an industrialisable analysis tool.",
   "shortDesc": "The project *EDF Sentiment Analysis* was created by anne-soline.guilbert-ly on Mar 13th 2025",
   "tags": [],
   "customFields": {},
