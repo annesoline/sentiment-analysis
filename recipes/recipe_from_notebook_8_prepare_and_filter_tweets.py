@@ -1,13 +1,15 @@
-# -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE_MAGIC_CELL
-# Automatically replaced inline charts by "no-op" charts
-# %pylab inline
-import matplotlib
-matplotlib.use("Agg")
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
+# # Packages
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 import dataiku
 from dataiku import pandasutils as pdu
 import pandas as pd
+
+from nltk.stem import PorterStemmer
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
+# # Input
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 cleaned_tweets_encryption = dataiku.Dataset("cleaned_tweets")
@@ -17,7 +19,6 @@ cleaned_tweets_encryption_df = cleaned_tweets_encryption.get_dataframe()
 # ## 8.1. Retrait des duplicatas
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-# Remove duplicates based on the 'is_duplicated' column
 cleaned_tweets_encryption_df = cleaned_tweets_encryption_df[cleaned_tweets_encryption_df['is_duplicated'] == 0]
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
@@ -25,7 +26,6 @@ cleaned_tweets_encryption_df = cleaned_tweets_encryption_df[cleaned_tweets_encry
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Apply stemming to the 'text' column
-from nltk.stem import PorterStemmer
 
 stemmer = PorterStemmer()
 
@@ -35,6 +35,9 @@ def apply_stemming(text):
     return ' '.join(stemmed_words)
 
 cleaned_tweets_encryption_df['text'] = cleaned_tweets_encryption_df['text'].apply(apply_stemming)
+
+# -------------------------------------------------------------------------------- NOTEBOOK-CELL: MARKDOWN
+# # Output
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Recipe outputs
