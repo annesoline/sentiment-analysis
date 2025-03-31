@@ -1,5 +1,5 @@
 {
-  "name": "data",
+  "name": "data_",
   "type": "S3",
   "params": {
     "bucket": "gis-dataiker-2-data-1",
